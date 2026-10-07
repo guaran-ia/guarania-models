@@ -1,0 +1,547 @@
+# Model: gemma4_4b
+
+Gain rows show relative percentage change from the matching base model; positive values indicate improvement.
+
+## FLORES-200 translations
+
+| metric | Instances | base | full_C1_kuatia | full_C2_kuatia_no_synthetic | full_C3_kuatia_es20 | full_C4_kuatia_no_synthetic_es20 | full_C5_kuatia_en20 | full_C6_kuatia_no_synthetic_en20 | full_C7_kuatia_es10_en10 | full_C8_kuatia_no_synthetic_es10_en10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| flores200_en_to_gn_bleu | 1,012 | 0.672 | 0.886 | 0.023 | 1.676 | 1.174 | 1.253 | **4.129** | 2.194 | 2.501 |
+| flores200_en_to_gn_bleu_gain_base |  | -- | +31.85% | -96.58% | +149.40% | +74.70% | +86.46% | +514.43% | +226.49% | +272.17% |
+| flores200_en_to_gn_bleu_stderr | 1,012 | 0.128 | 0.147 | 0.016 | 0.183 | 0.175 | 0.168 | 0.279 | 0.255 | 0.239 |
+| flores200_en_to_gn_bleu_stderr_gain_base |  | -- | +14.84% | -87.50% | +42.97% | +36.72% | +31.25% | +117.97% | +99.22% | +86.72% |
+| flores200_en_to_gn_chrf++ | 1,012 | 4.306 | 11.415 | 5.493 | 14.286 | 12.497 | 12.943 | **22.567** | 15.917 | 16.623 |
+| flores200_en_to_gn_chrf++_gain_base |  | -- | +165.10% | +27.57% | +231.77% | +190.22% | +200.58% | +424.08% | +269.65% | +286.04% |
+| flores200_es_to_gn_bleu | 1,012 | 0.022 | **0.700** | 0.002 | 0.235 | 0.000 | 0.301 | 0.074 | 0.278 | 0.205 |
+| flores200_es_to_gn_bleu_gain_base |  | -- | +3081.82% | -90.91% | +968.18% | -100.00% | +1268.18% | +236.36% | +1163.64% | +831.82% |
+| flores200_es_to_gn_bleu_stderr | 1,012 | 0.010 | 0.231 | 0.003 | 0.074 | 0.000 | 0.068 | 0.031 | 0.077 | 0.152 |
+| flores200_es_to_gn_bleu_stderr_gain_base |  | -- | +2210.00% | -70.00% | +640.00% | -100.00% | +580.00% | +210.00% | +670.00% | +1420.00% |
+| flores200_es_to_gn_chrf++ | 1,012 | 0.643 | 7.322 | 0.129 | 1.452 | 1.687 | **8.482** | 6.042 | 8.356 | 6.604 |
+| flores200_es_to_gn_chrf++_gain_base |  | -- | +1038.72% | -79.94% | +125.82% | +162.36% | +1219.13% | +839.66% | +1199.53% | +927.06% |
+| flores200_gn_to_es_bleu | 1,012 | 1.286 | 8.207 | 7.182 | 4.527 | 7.354 | **10.582** | 8.891 | 9.495 | 0.405 |
+| flores200_gn_to_es_bleu_gain_base |  | -- | +538.18% | +458.48% | +252.02% | +471.85% | +722.86% | +591.37% | +638.34% | -68.51% |
+| flores200_gn_to_es_bleu_stderr | 1,012 | 0.251 | 0.386 | 0.419 | 0.384 | 0.390 | 0.393 | 0.418 | 0.388 | 0.119 |
+| flores200_gn_to_es_bleu_stderr_gain_base |  | -- | +53.78% | +66.93% | +52.99% | +55.38% | +56.57% | +66.53% | +54.58% | -52.59% |
+| flores200_gn_to_es_chrf++ | 1,012 | 12.290 | 27.068 | 25.281 | 20.257 | 24.992 | **31.808** | 28.735 | 28.960 | 10.026 |
+| flores200_gn_to_es_chrf++_gain_base |  | -- | +120.24% | +105.70% | +64.83% | +103.35% | +158.81% | +133.81% | +135.64% | -18.42% |
+| flores200_gn_to_en_bleu | 1,012 | 9.726 | 17.068 | 17.307 | 17.314 | 17.119 | 18.262 | 17.702 | **19.239** | 8.364 |
+| flores200_gn_to_en_bleu_gain_base |  | -- | +75.49% | +77.95% | +78.02% | +76.01% | +87.76% | +82.01% | +97.81% | -14.00% |
+| flores200_gn_to_en_bleu_stderr | 1,012 | 0.497 | 0.543 | 0.538 | 0.528 | 0.566 | 0.526 | 0.505 | 0.570 | 0.484 |
+| flores200_gn_to_en_bleu_stderr_gain_base |  | -- | +9.26% | +8.25% | +6.24% | +13.88% | +5.84% | +1.61% | +14.69% | -2.62% |
+| flores200_gn_to_en_chrf++ | 1,012 | 27.314 | 38.512 | 41.250 | 39.048 | 40.619 | 40.594 | 40.311 | **41.936** | 25.224 |
+| flores200_gn_to_en_chrf++_gain_base |  | -- | +41.00% | +51.02% | +42.96% | +48.71% | +48.62% | +47.58% | +53.53% | -7.65% |
+
+## Perplexity
+
+| metric | Instances | base | full_C1_kuatia | full_C2_kuatia_no_synthetic | full_C3_kuatia_es20 | full_C4_kuatia_no_synthetic_es20 | full_C5_kuatia_en20 | full_C6_kuatia_no_synthetic_en20 | full_C7_kuatia_es10_en10 | full_C8_kuatia_no_synthetic_es10_en10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| gn_bits_per_byte | 66 | 2.534 | 1.147 | 1.172 | 1.150 | 1.175 | 1.152 | 1.180 | 1.145 | 1.170 |
+| gn_bits_per_byte_gain_base |  | -- | +54.74% | +53.75% | +54.62% | +53.63% | +54.54% | +53.43% | +54.81% | +53.83% |
+| gn_byte_perplexity | 66 | 5.794 | 2.215 | 2.253 | 2.219 | 2.258 | 2.222 | 2.267 | 2.212 | 2.250 |
+| gn_byte_perplexity_gain_base |  | -- | +61.77% | +61.11% | +61.70% | +61.03% | +61.65% | +60.87% | +61.82% | +61.17% |
+| gn_word_perplexity | 66 | 1998537.220 | 711.090 | 817.978 | 721.317 | 835.255 | 730.535 | 860.464 | 702.489 | 810.546 |
+| gn_word_perplexity_gain_base |  | -- | +99.96% | +99.96% | +99.96% | +99.96% | +99.96% | +99.96% | +99.96% | +99.96% |
+
+## Guarani benchmarks
+
+| metric | Instances | base | full_C1_kuatia | full_C2_kuatia_no_synthetic | full_C3_kuatia_es20 | full_C4_kuatia_no_synthetic_es20 | full_C5_kuatia_en20 | full_C6_kuatia_no_synthetic_en20 | full_C7_kuatia_es10_en10 | full_C8_kuatia_no_synthetic_es10_en10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| gn_belebele_acc | 900 | 0.430 | **0.467** | 0.408 | 0.436 | 0.424 | 0.432 | 0.434 | 0.466 | 0.432 |
+| gn_belebele_acc_gain_base |  | -- | +8.60% | -5.12% | +1.40% | -1.40% | +0.47% | +0.93% | +8.37% | +0.47% |
+| gn_belebele_acc_norm | 900 | 0.430 | **0.467** | 0.408 | 0.436 | 0.424 | 0.432 | 0.434 | 0.466 | 0.432 |
+| gn_belebele_acc_norm_gain_base |  | -- | +8.60% | -5.12% | +1.40% | -1.40% | +0.47% | +0.93% | +8.37% | +0.47% |
+| gn_belebele_acc_norm_stderr | 900 | 0.017 | 0.017 | 0.016 | 0.017 | 0.016 | 0.017 | 0.017 | 0.017 | 0.017 |
+| gn_belebele_acc_norm_stderr_gain_base |  | -- | +0.00% | -5.88% | +0.00% | -5.88% | +0.00% | +0.00% | +0.00% | +0.00% |
+| gn_belebele_acc_stderr | 900 | 0.017 | 0.017 | 0.016 | 0.017 | 0.016 | 0.017 | 0.017 | 0.017 | 0.017 |
+| gn_belebele_acc_stderr_gain_base |  | -- | +0.00% | -5.88% | +0.00% | -5.88% | +0.00% | +0.00% | +0.00% | +0.00% |
+| gn_global_mmlu_lite_acc | 400 | 0.388 | 0.325 | 0.400 | 0.355 | 0.355 | 0.395 | 0.390 | **0.412** | 0.385 |
+| gn_global_mmlu_lite_acc_gain_base |  | -- | -16.24% | +3.09% | -8.51% | -8.51% | +1.80% | +0.52% | +6.19% | -0.77% |
+| gn_global_mmlu_lite_acc_norm | 400 | 0.388 | 0.325 | 0.400 | 0.355 | 0.355 | 0.395 | 0.390 | **0.412** | 0.385 |
+| gn_global_mmlu_lite_acc_norm_gain_base |  | -- | -16.24% | +3.09% | -8.51% | -8.51% | +1.80% | +0.52% | +6.19% | -0.77% |
+| gn_global_mmlu_lite_acc_norm_stderr | 400 | 0.024 | 0.023 | 0.025 | 0.024 | 0.024 | 0.024 | 0.024 | 0.025 | 0.024 |
+| gn_global_mmlu_lite_acc_norm_stderr_gain_base |  | -- | -4.17% | +4.17% | +0.00% | +0.00% | +0.00% | +0.00% | +4.17% | +0.00% |
+| gn_global_mmlu_lite_acc_stderr | 400 | 0.024 | 0.023 | 0.025 | 0.024 | 0.024 | 0.024 | 0.024 | 0.025 | 0.024 |
+| gn_global_mmlu_lite_acc_stderr_gain_base |  | -- | -4.17% | +4.17% | +0.00% | +0.00% | +0.00% | +0.00% | +4.17% | +0.00% |
+| gn_multiwikiqa_exact_match | 5,003 | 0.051 | 0.113 | 0.100 | 0.126 | 0.099 | 0.116 | 0.123 | 0.124 | **0.133** |
+| gn_multiwikiqa_exact_match_gain_base |  | -- | +121.57% | +96.08% | +147.06% | +94.12% | +127.45% | +141.18% | +143.14% | +160.78% |
+| gn_multiwikiqa_exact_match_stderr | 5,003 | 0.003 | 0.004 | 0.004 | 0.005 | 0.004 | 0.005 | 0.005 | 0.005 | 0.005 |
+| gn_multiwikiqa_exact_match_stderr_gain_base |  | -- | +33.33% | +33.33% | +66.67% | +33.33% | +66.67% | +66.67% | +66.67% | +66.67% |
+| gn_multiwikiqa_f1 | 5,003 | 0.202 | 0.287 | 0.273 | 0.301 | 0.276 | 0.293 | 0.293 | 0.303 | **0.311** |
+| gn_multiwikiqa_f1_gain_base |  | -- | +42.08% | +35.15% | +49.01% | +36.63% | +45.05% | +45.05% | +50.00% | +53.96% |
+| gn_multiwikiqa_f1_stderr | 5,003 | 0.004 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| gn_multiwikiqa_f1_stderr_gain_base |  | -- | +25.00% | +25.00% | +25.00% | +25.00% | +25.00% | +25.00% | +25.00% | +25.00% |
+| Average of variant across benchmarks |  | 0.165 | 0.173 | 0.173 | 0.175 | 0.169 | 0.180 | 0.180 | **0.190** | 0.181 |
+| Average of variant gain in relation to base across benchmarks |  | -- | +16.53% | +15.17% | +22.79% | +13.13% | +22.39% | +23.40% | +26.85% | +25.48% |
+
+## Spanish benchmarks
+
+| metric | Instances | base | full_C1_kuatia | full_C2_kuatia_no_synthetic | full_C3_kuatia_es20 | full_C4_kuatia_no_synthetic_es20 | full_C5_kuatia_en20 | full_C6_kuatia_no_synthetic_en20 | full_C7_kuatia_es10_en10 | full_C8_kuatia_no_synthetic_es10_en10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| es_arc_challenge_acc | 299 | **0.806** | 0.749 | 0.719 | 0.729 | 0.729 | 0.726 | 0.749 | 0.739 | 0.709 |
+| es_arc_challenge_acc_gain_base |  | -- | -7.07% | -10.79% | -9.55% | -9.55% | -9.93% | -7.07% | -8.31% | -12.03% |
+| es_arc_challenge_acc_norm | 299 | **0.806** | 0.749 | 0.719 | 0.729 | 0.729 | 0.726 | 0.749 | 0.739 | 0.709 |
+| es_arc_challenge_acc_norm_gain_base |  | -- | -7.07% | -10.79% | -9.55% | -9.55% | -9.93% | -7.07% | -8.31% | -12.03% |
+| es_arc_challenge_acc_norm_stderr | 299 | 0.023 | 0.025 | 0.026 | 0.026 | 0.026 | 0.026 | 0.025 | 0.025 | 0.026 |
+| es_arc_challenge_acc_norm_stderr_gain_base |  | -- | +8.70% | +13.04% | +13.04% | +13.04% | +13.04% | +8.70% | +8.70% | +13.04% |
+| es_arc_challenge_acc_stderr | 299 | 0.023 | 0.025 | 0.026 | 0.026 | 0.026 | 0.026 | 0.025 | 0.025 | 0.026 |
+| es_arc_challenge_acc_stderr_gain_base |  | -- | +8.70% | +13.04% | +13.04% | +13.04% | +13.04% | +8.70% | +8.70% | +13.04% |
+| es_arc_easy_acc | 570 | **0.898** | 0.868 | 0.867 | 0.884 | 0.874 | 0.825 | 0.881 | 0.874 | 0.874 |
+| es_arc_easy_acc_gain_base |  | -- | -3.34% | -3.45% | -1.56% | -2.67% | -8.13% | -1.89% | -2.67% | -2.67% |
+| es_arc_easy_acc_norm | 570 | **0.898** | 0.868 | 0.867 | 0.884 | 0.874 | 0.825 | 0.881 | 0.874 | 0.874 |
+| es_arc_easy_acc_norm_gain_base |  | -- | -3.34% | -3.45% | -1.56% | -2.67% | -8.13% | -1.89% | -2.67% | -2.67% |
+| es_arc_easy_acc_norm_stderr | 570 | 0.013 | 0.014 | 0.014 | 0.013 | 0.014 | 0.016 | 0.014 | 0.014 | 0.014 |
+| es_arc_easy_acc_norm_stderr_gain_base |  | -- | +7.69% | +7.69% | +0.00% | +7.69% | +23.08% | +7.69% | +7.69% | +7.69% |
+| es_arc_easy_acc_stderr | 570 | 0.013 | 0.014 | 0.014 | 0.013 | 0.014 | 0.016 | 0.014 | 0.014 | 0.014 |
+| es_arc_easy_acc_stderr_gain_base |  | -- | +7.69% | +7.69% | +0.00% | +7.69% | +23.08% | +7.69% | +7.69% | +7.69% |
+| es_belebele_acc | 900 | **0.784** | 0.716 | 0.676 | 0.728 | 0.734 | 0.701 | 0.738 | 0.752 | 0.721 |
+| es_belebele_acc_gain_base |  | -- | -8.67% | -13.78% | -7.14% | -6.38% | -10.59% | -5.87% | -4.08% | -8.04% |
+| es_belebele_acc_norm | 900 | **0.784** | 0.716 | 0.676 | 0.728 | 0.734 | 0.701 | 0.738 | 0.752 | 0.721 |
+| es_belebele_acc_norm_gain_base |  | -- | -8.67% | -13.78% | -7.14% | -6.38% | -10.59% | -5.87% | -4.08% | -8.04% |
+| es_belebele_acc_norm_stderr | 900 | 0.014 | 0.015 | 0.016 | 0.015 | 0.015 | 0.015 | 0.015 | 0.014 | 0.015 |
+| es_belebele_acc_norm_stderr_gain_base |  | -- | +7.14% | +14.29% | +7.14% | +7.14% | +7.14% | +7.14% | +0.00% | +7.14% |
+| es_belebele_acc_stderr | 900 | 0.014 | 0.015 | 0.016 | 0.015 | 0.015 | 0.015 | 0.015 | 0.014 | 0.015 |
+| es_belebele_acc_stderr_gain_base |  | -- | +7.14% | +14.29% | +7.14% | +7.14% | +7.14% | +7.14% | +0.00% | +7.14% |
+| es_copa_acc | 500 | **0.828** | 0.810 | 0.802 | 0.810 | **0.828** | 0.812 | 0.812 | 0.816 | 0.802 |
+| es_copa_acc_gain_base |  | -- | -2.17% | -3.14% | -2.17% | +0.00% | -1.93% | -1.93% | -1.45% | -3.14% |
+| es_copa_acc_stderr | 500 | 0.017 | 0.018 | 0.018 | 0.018 | 0.017 | 0.017 | 0.017 | 0.017 | 0.018 |
+| es_copa_acc_stderr_gain_base |  | -- | +5.88% | +5.88% | +5.88% | +0.00% | +0.00% | +0.00% | +0.00% | +5.88% |
+| es_global_mmlu_lite_acc | 400 | **0.632** | 0.562 | 0.547 | 0.593 | 0.575 | 0.575 | 0.620 | 0.598 | 0.590 |
+| es_global_mmlu_lite_acc_gain_base |  | -- | -11.08% | -13.45% | -6.17% | -9.02% | -9.02% | -1.90% | -5.38% | -6.65% |
+| es_global_mmlu_lite_acc_norm | 400 | **0.632** | 0.562 | 0.547 | 0.593 | 0.575 | 0.575 | 0.620 | 0.598 | 0.590 |
+| es_global_mmlu_lite_acc_norm_gain_base |  | -- | -11.08% | -13.45% | -6.17% | -9.02% | -9.02% | -1.90% | -5.38% | -6.65% |
+| es_global_mmlu_lite_acc_norm_stderr | 400 | 0.024 | 0.025 | 0.025 | 0.025 | 0.025 | 0.025 | 0.024 | 0.025 | 0.025 |
+| es_global_mmlu_lite_acc_norm_stderr_gain_base |  | -- | +4.17% | +4.17% | +4.17% | +4.17% | +4.17% | +0.00% | +4.17% | +4.17% |
+| es_global_mmlu_lite_acc_stderr | 400 | 0.024 | 0.025 | 0.025 | 0.025 | 0.025 | 0.025 | 0.024 | 0.025 | 0.025 |
+| es_global_mmlu_lite_acc_stderr_gain_base |  | -- | +4.17% | +4.17% | +4.17% | +4.17% | +4.17% | +0.00% | +4.17% | +4.17% |
+| es_gpqa_diamond_acc | 198 | **0.323** | 0.268 | 0.293 | 0.273 | 0.268 | 0.303 | 0.278 | 0.293 | 0.268 |
+| es_gpqa_diamond_acc_gain_base |  | -- | -17.03% | -9.29% | -15.48% | -17.03% | -6.19% | -13.93% | -9.29% | -17.03% |
+| es_gpqa_diamond_acc_norm | 198 | **0.323** | 0.268 | 0.293 | 0.273 | 0.268 | 0.303 | 0.278 | 0.293 | 0.268 |
+| es_gpqa_diamond_acc_norm_gain_base |  | -- | -17.03% | -9.29% | -15.48% | -17.03% | -6.19% | -13.93% | -9.29% | -17.03% |
+| es_gpqa_diamond_acc_norm_stderr | 198 | 0.033 | 0.032 | 0.032 | 0.032 | 0.032 | 0.033 | 0.032 | 0.032 | 0.032 |
+| es_gpqa_diamond_acc_norm_stderr_gain_base |  | -- | -3.03% | -3.03% | -3.03% | -3.03% | +0.00% | -3.03% | -3.03% | -3.03% |
+| es_gpqa_diamond_acc_stderr | 198 | 0.033 | 0.032 | 0.032 | 0.032 | 0.032 | 0.033 | 0.032 | 0.032 | 0.032 |
+| es_gpqa_diamond_acc_stderr_gain_base |  | -- | -3.03% | -3.03% | -3.03% | -3.03% | +0.00% | -3.03% | -3.03% | -3.03% |
+| es_hellaswag_acc | 9,374 | 0.533 | 0.525 | 0.528 | 0.534 | 0.534 | 0.533 | 0.530 | **0.535** | 0.525 |
+| es_hellaswag_acc_gain_base |  | -- | -1.50% | -0.94% | +0.19% | +0.19% | +0.00% | -0.56% | +0.38% | -1.50% |
+| es_hellaswag_acc_norm | 9,374 | **0.716** | 0.695 | 0.702 | 0.706 | 0.708 | 0.710 | 0.708 | 0.701 | 0.701 |
+| es_hellaswag_acc_norm_gain_base |  | -- | -2.93% | -1.96% | -1.40% | -1.12% | -0.84% | -1.12% | -2.09% | -2.09% |
+| es_hellaswag_acc_norm_stderr | 9,374 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| es_hellaswag_acc_norm_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| es_hellaswag_acc_stderr | 9,374 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| es_hellaswag_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| es_mgsm_direct_exact_match | 250 | **0.280** | 0.228 | 0.224 | 0.180 | 0.172 | 0.192 | 0.184 | 0.200 | 0.128 |
+| es_mgsm_direct_exact_match_gain_base |  | -- | -18.57% | -20.00% | -35.71% | -38.57% | -31.43% | -34.29% | -28.57% | -54.29% |
+| es_mgsm_direct_exact_match_stderr | 250 | 0.028 | 0.027 | 0.026 | 0.024 | 0.024 | 0.025 | 0.025 | 0.025 | 0.021 |
+| es_mgsm_direct_exact_match_stderr_gain_base |  | -- | -3.57% | -7.14% | -14.29% | -14.29% | -10.71% | -10.71% | -10.71% | -25.00% |
+| es_multiwikiqa_exact_match | 5,001 | 0.146 | 0.239 | 0.233 | 0.360 | 0.351 | 0.371 | **0.387** | 0.364 | 0.366 |
+| es_multiwikiqa_exact_match_gain_base |  | -- | +63.70% | +59.59% | +146.58% | +140.41% | +154.11% | +165.07% | +149.32% | +150.68% |
+| es_multiwikiqa_exact_match_stderr | 5,001 | 0.005 | 0.006 | 0.006 | 0.007 | 0.007 | 0.007 | 0.007 | 0.007 | 0.007 |
+| es_multiwikiqa_exact_match_stderr_gain_base |  | -- | +20.00% | +20.00% | +40.00% | +40.00% | +40.00% | +40.00% | +40.00% | +40.00% |
+| es_multiwikiqa_f1 | 5,001 | 0.222 | 0.484 | 0.468 | 0.566 | 0.562 | 0.556 | **0.597** | 0.572 | 0.567 |
+| es_multiwikiqa_f1_gain_base |  | -- | +118.02% | +110.81% | +154.95% | +153.15% | +150.45% | +168.92% | +157.66% | +155.41% |
+| es_multiwikiqa_f1_stderr | 5,001 | 0.005 | 0.005 | 0.005 | 0.006 | 0.006 | 0.006 | 0.006 | 0.006 | 0.006 |
+| es_multiwikiqa_f1_stderr_gain_base |  | -- | +0.00% | +0.00% | +20.00% | +20.00% | +20.00% | +20.00% | +20.00% | +20.00% |
+| es_piqa_acc | 100 | **0.830** | 0.800 | 0.800 | 0.780 | 0.770 | 0.790 | 0.780 | 0.800 | 0.790 |
+| es_piqa_acc_gain_base |  | -- | -3.61% | -3.61% | -6.02% | -7.23% | -4.82% | -6.02% | -3.61% | -4.82% |
+| es_piqa_acc_bytes | 100 | **0.830** | 0.800 | 0.780 | 0.740 | 0.780 | 0.790 | 0.760 | 0.800 | 0.790 |
+| es_piqa_acc_bytes_gain_base |  | -- | -3.61% | -6.02% | -10.84% | -6.02% | -4.82% | -8.43% | -3.61% | -4.82% |
+| es_piqa_acc_bytes_stderr | 100 | 0.038 | 0.040 | 0.042 | 0.044 | 0.042 | 0.041 | 0.043 | 0.040 | 0.041 |
+| es_piqa_acc_bytes_stderr_gain_base |  | -- | +5.26% | +10.53% | +15.79% | +10.53% | +7.89% | +13.16% | +5.26% | +7.89% |
+| es_piqa_acc_norm | 100 | **0.830** | 0.800 | 0.780 | 0.750 | 0.790 | 0.790 | 0.760 | 0.810 | 0.790 |
+| es_piqa_acc_norm_gain_base |  | -- | -3.61% | -6.02% | -9.64% | -4.82% | -4.82% | -8.43% | -2.41% | -4.82% |
+| es_piqa_acc_norm_stderr | 100 | 0.038 | 0.040 | 0.042 | 0.044 | 0.041 | 0.041 | 0.043 | 0.039 | 0.041 |
+| es_piqa_acc_norm_stderr_gain_base |  | -- | +5.26% | +10.53% | +15.79% | +7.89% | +7.89% | +13.16% | +2.63% | +7.89% |
+| es_piqa_acc_stderr | 100 | 0.038 | 0.040 | 0.040 | 0.042 | 0.042 | 0.041 | 0.042 | 0.040 | 0.041 |
+| es_piqa_acc_stderr_gain_base |  | -- | +5.26% | +5.26% | +10.53% | +10.53% | +7.89% | +10.53% | +5.26% | +7.89% |
+| es_truthfulqa_mc1_acc | 789 | 0.259 | 0.256 | 0.261 | 0.251 | **0.270** | 0.245 | 0.240 | 0.242 | 0.240 |
+| es_truthfulqa_mc1_acc_gain_base |  | -- | -1.16% | +0.77% | -3.09% | +4.25% | -5.41% | -7.34% | -6.56% | -7.34% |
+| es_truthfulqa_mc1_acc_stderr | 789 | 0.016 | 0.016 | 0.016 | 0.015 | 0.016 | 0.015 | 0.015 | 0.015 | 0.015 |
+| es_truthfulqa_mc1_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | -6.25% | +0.00% | -6.25% | -6.25% | -6.25% | -6.25% |
+| es_xnli_acc | 2,490 | 0.476 | 0.471 | 0.470 | 0.470 | **0.500** | 0.467 | 0.475 | 0.477 | 0.490 |
+| es_xnli_acc_gain_base |  | -- | -1.05% | -1.26% | -1.26% | +5.04% | -1.89% | -0.21% | +0.21% | +2.94% |
+| es_xnli_acc_stderr | 2,490 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 |
+| es_xnli_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| es_xstorycloze_acc | 1,511 | 0.717 | 0.716 | 0.720 | 0.719 | 0.722 | **0.732** | 0.725 | 0.719 | 0.717 |
+| es_xstorycloze_acc_gain_base |  | -- | -0.14% | +0.42% | +0.28% | +0.70% | +2.09% | +1.12% | +0.28% | +0.00% |
+| es_xstorycloze_acc_stderr | 1,511 | 0.012 | 0.012 | 0.012 | 0.012 | 0.012 | 0.011 | 0.011 | 0.012 | 0.012 |
+| es_xstorycloze_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | -8.33% | -8.33% | +0.00% | +0.00% |
+| Average of variant across benchmarks |  | 0.318 | 0.309 | 0.305 | 0.312 | 0.313 | 0.311 | 0.317 | **0.318** | 0.311 |
+| Average of variant gain in relation to base across benchmarks |  | -- | +3.10% | +3.28% | +6.41% | +6.58% | +7.19% | +7.23% | +6.62% | +5.68% |
+
+## English benchmarks
+
+| metric | Instances | base | full_C1_kuatia | full_C2_kuatia_no_synthetic | full_C3_kuatia_es20 | full_C4_kuatia_no_synthetic_es20 | full_C5_kuatia_en20 | full_C6_kuatia_no_synthetic_en20 | full_C7_kuatia_es10_en10 | full_C8_kuatia_no_synthetic_es10_en10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| en_arc_challenge_acc | 1,172 | **0.566** | 0.539 | 0.520 | 0.538 | 0.538 | 0.544 | 0.547 | 0.532 | 0.544 |
+| en_arc_challenge_acc_gain_base |  | -- | -4.77% | -8.13% | -4.95% | -4.95% | -3.89% | -3.36% | -6.01% | -3.89% |
+| en_arc_challenge_acc_norm | 1,172 | **0.596** | 0.567 | 0.551 | 0.564 | 0.558 | 0.562 | 0.582 | 0.569 | 0.564 |
+| en_arc_challenge_acc_norm_gain_base |  | -- | -4.87% | -7.55% | -5.37% | -6.38% | -5.70% | -2.35% | -4.53% | -5.37% |
+| en_arc_challenge_acc_norm_stderr | 1,172 | 0.014 | 0.014 | 0.015 | 0.014 | 0.015 | 0.014 | 0.014 | 0.014 | 0.014 |
+| en_arc_challenge_acc_norm_stderr_gain_base |  | -- | +0.00% | +7.14% | +0.00% | +7.14% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_arc_challenge_acc_stderr | 1,172 | 0.014 | 0.015 | 0.015 | 0.015 | 0.015 | 0.015 | 0.015 | 0.015 | 0.015 |
+| en_arc_challenge_acc_stderr_gain_base |  | -- | +7.14% | +7.14% | +7.14% | +7.14% | +7.14% | +7.14% | +7.14% | +7.14% |
+| en_arc_easy_acc | 2,376 | **0.848** | 0.814 | 0.821 | 0.810 | 0.816 | 0.820 | 0.837 | 0.819 | 0.816 |
+| en_arc_easy_acc_gain_base |  | -- | -4.01% | -3.18% | -4.48% | -3.77% | -3.30% | -1.30% | -3.42% | -3.77% |
+| en_arc_easy_acc_norm | 2,376 | **0.852** | 0.797 | 0.811 | 0.803 | 0.814 | 0.813 | 0.829 | 0.808 | 0.806 |
+| en_arc_easy_acc_norm_gain_base |  | -- | -6.46% | -4.81% | -5.75% | -4.46% | -4.58% | -2.70% | -5.16% | -5.40% |
+| en_arc_easy_acc_norm_stderr | 2,376 | 0.007 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 |
+| en_arc_easy_acc_norm_stderr_gain_base |  | -- | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% |
+| en_arc_easy_acc_stderr | 2,376 | 0.007 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 | 0.008 |
+| en_arc_easy_acc_stderr_gain_base |  | -- | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% | +14.29% |
+| en_bbh_boolean_expressions_exact_match | 250 | 0.032 | 0.008 | 0.016 | 0.036 | **0.172** | 0.020 | 0.016 | 0.012 | 0.000 |
+| en_bbh_boolean_expressions_exact_match_gain_base |  | -- | -75.00% | -50.00% | +12.50% | +437.50% | -37.50% | -50.00% | -62.50% | -100.00% |
+| en_bbh_boolean_expressions_exact_match_stderr | 250 | 0.011 | 0.006 | 0.008 | 0.012 | 0.024 | 0.009 | 0.008 | 0.007 | 0.000 |
+| en_bbh_boolean_expressions_exact_match_stderr_gain_base |  | -- | -45.45% | -27.27% | +9.09% | +118.18% | -18.18% | -27.27% | -36.36% | -100.00% |
+| en_bbh_causal_judgement_exact_match | 187 | **0.016** | 0.000 | 0.000 | 0.000 | 0.005 | **0.016** | 0.005 | 0.000 | 0.005 |
+| en_bbh_causal_judgement_exact_match_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -68.75% | +0.00% | -68.75% | -100.00% | -68.75% |
+| en_bbh_causal_judgement_exact_match_stderr | 187 | 0.009 | 0.000 | 0.000 | 0.000 | 0.005 | 0.009 | 0.005 | 0.000 | 0.005 |
+| en_bbh_causal_judgement_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -44.44% | +0.00% | -44.44% | -100.00% | -44.44% |
+| en_bbh_date_understanding_exact_match | 250 | **0.136** | 0.008 | 0.004 | 0.028 | 0.052 | 0.024 | 0.004 | 0.016 | 0.000 |
+| en_bbh_date_understanding_exact_match_gain_base |  | -- | -94.12% | -97.06% | -79.41% | -61.76% | -82.35% | -97.06% | -88.24% | -100.00% |
+| en_bbh_date_understanding_exact_match_stderr | 250 | 0.022 | 0.006 | 0.004 | 0.010 | 0.014 | 0.010 | 0.004 | 0.008 | 0.000 |
+| en_bbh_date_understanding_exact_match_stderr_gain_base |  | -- | -72.73% | -81.82% | -54.55% | -36.36% | -54.55% | -81.82% | -63.64% | -100.00% |
+| en_bbh_disambiguation_qa_exact_match | 250 | 0.000 | 0.000 | 0.004 | 0.000 | 0.000 | **0.040** | 0.008 | 0.008 | 0.000 |
+| en_bbh_disambiguation_qa_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_disambiguation_qa_exact_match_stderr | 250 | 0.000 | 0.000 | 0.004 | 0.000 | 0.000 | 0.012 | 0.006 | 0.006 | 0.000 |
+| en_bbh_disambiguation_qa_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_dyck_languages_exact_match | 250 | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** |
+| en_bbh_dyck_languages_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_dyck_languages_exact_match_stderr | 250 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_dyck_languages_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_exact_match | 6,511 | **0.027** | 0.005 | 0.007 | 0.009 | 0.016 | 0.015 | 0.008 | 0.011 | 0.009 |
+| en_bbh_exact_match_gain_base |  | -- | -81.48% | -74.07% | -66.67% | -40.74% | -44.44% | -70.37% | -59.26% | -66.67% |
+| en_bbh_exact_match_stderr | not recorded | 0.002 | 0.001 | 0.001 | 0.001 | 0.001 | 0.001 | 0.001 | 0.001 | 0.001 |
+| en_bbh_exact_match_stderr_gain_base |  | -- | -50.00% | -50.00% | -50.00% | -50.00% | -50.00% | -50.00% | -50.00% | -50.00% |
+| en_bbh_formal_fallacies_exact_match | 250 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | **0.008** |
+| en_bbh_formal_fallacies_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_formal_fallacies_exact_match_stderr | 250 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.006 |
+| en_bbh_formal_fallacies_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_geometric_shapes_exact_match | 250 | **0.004** | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_geometric_shapes_exact_match_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% |
+| en_bbh_geometric_shapes_exact_match_stderr | 250 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_geometric_shapes_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% |
+| en_bbh_hyperbaton_exact_match | 250 | 0.000 | 0.000 | **0.004** | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_hyperbaton_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_hyperbaton_exact_match_stderr | 250 | 0.000 | 0.000 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_hyperbaton_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_logical_deduction_five_objects_exact_match | 250 | 0.000 | 0.004 | **0.024** | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_logical_deduction_five_objects_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_logical_deduction_five_objects_exact_match_stderr | 250 | 0.000 | 0.004 | 0.010 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_logical_deduction_five_objects_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_logical_deduction_seven_objects_exact_match | 250 | **0.016** | 0.004 | 0.012 | 0.012 | 0.004 | 0.000 | **0.016** | 0.000 | 0.004 |
+| en_bbh_logical_deduction_seven_objects_exact_match_gain_base |  | -- | -75.00% | -25.00% | -25.00% | -75.00% | -100.00% | +0.00% | -100.00% | -75.00% |
+| en_bbh_logical_deduction_seven_objects_exact_match_stderr | 250 | 0.008 | 0.004 | 0.007 | 0.007 | 0.004 | 0.000 | 0.008 | 0.000 | 0.004 |
+| en_bbh_logical_deduction_seven_objects_exact_match_stderr_gain_base |  | -- | -50.00% | -12.50% | -12.50% | -50.00% | -100.00% | +0.00% | -100.00% | -50.00% |
+| en_bbh_logical_deduction_three_objects_exact_match | 250 | **0.024** | 0.000 | 0.000 | 0.016 | 0.000 | 0.004 | 0.000 | 0.000 | 0.008 |
+| en_bbh_logical_deduction_three_objects_exact_match_gain_base |  | -- | -100.00% | -100.00% | -33.33% | -100.00% | -83.33% | -100.00% | -100.00% | -66.67% |
+| en_bbh_logical_deduction_three_objects_exact_match_stderr | 250 | 0.010 | 0.000 | 0.000 | 0.008 | 0.000 | 0.004 | 0.000 | 0.000 | 0.006 |
+| en_bbh_logical_deduction_three_objects_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -20.00% | -100.00% | -60.00% | -100.00% | -100.00% | -40.00% |
+| en_bbh_movie_recommendation_exact_match | 250 | 0.000 | 0.000 | 0.000 | 0.004 | 0.016 | 0.004 | **0.028** | 0.000 | 0.020 |
+| en_bbh_movie_recommendation_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_movie_recommendation_exact_match_stderr | 250 | 0.000 | 0.000 | 0.000 | 0.004 | 0.008 | 0.004 | 0.010 | 0.000 | 0.009 |
+| en_bbh_movie_recommendation_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_multistep_arithmetic_two_exact_match | 250 | 0.060 | 0.064 | **0.080** | 0.004 | 0.000 | 0.004 | 0.000 | 0.068 | 0.036 |
+| en_bbh_multistep_arithmetic_two_exact_match_gain_base |  | -- | +6.67% | +33.33% | -93.33% | -100.00% | -93.33% | -100.00% | +13.33% | -40.00% |
+| en_bbh_multistep_arithmetic_two_exact_match_stderr | 250 | 0.015 | 0.016 | 0.017 | 0.004 | 0.000 | 0.004 | 0.000 | 0.016 | 0.012 |
+| en_bbh_multistep_arithmetic_two_exact_match_stderr_gain_base |  | -- | +6.67% | +13.33% | -73.33% | -100.00% | -73.33% | -100.00% | +6.67% | -20.00% |
+| en_bbh_navigate_exact_match | 250 | **0.292** | 0.000 | 0.000 | 0.080 | 0.056 | 0.076 | 0.024 | 0.024 | 0.064 |
+| en_bbh_navigate_exact_match_gain_base |  | -- | -100.00% | -100.00% | -72.60% | -80.82% | -73.97% | -91.78% | -91.78% | -78.08% |
+| en_bbh_navigate_exact_match_stderr | 250 | 0.029 | 0.000 | 0.000 | 0.017 | 0.015 | 0.017 | 0.010 | 0.010 | 0.016 |
+| en_bbh_navigate_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -41.38% | -48.28% | -41.38% | -65.52% | -65.52% | -44.83% |
+| en_bbh_object_counting_exact_match | 250 | 0.000 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | **0.016** | 0.000 | 0.000 |
+| en_bbh_object_counting_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_object_counting_exact_match_stderr | 250 | 0.000 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.008 | 0.000 | 0.000 |
+| en_bbh_object_counting_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_penguins_in_a_table_exact_match | 146 | 0.000 | 0.000 | 0.000 | 0.000 | 0.034 | **0.048** | **0.048** | 0.021 | 0.007 |
+| en_bbh_penguins_in_a_table_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_penguins_in_a_table_exact_match_stderr | 146 | 0.000 | 0.000 | 0.000 | 0.000 | 0.015 | 0.018 | 0.018 | 0.012 | 0.007 |
+| en_bbh_penguins_in_a_table_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_reasoning_about_colored_objects_exact_match | 250 | 0.008 | 0.000 | 0.000 | 0.004 | **0.048** | 0.008 | 0.008 | 0.012 | 0.000 |
+| en_bbh_reasoning_about_colored_objects_exact_match_gain_base |  | -- | -100.00% | -100.00% | -50.00% | +500.00% | +0.00% | +0.00% | +50.00% | -100.00% |
+| en_bbh_reasoning_about_colored_objects_exact_match_stderr | 250 | 0.006 | 0.000 | 0.000 | 0.004 | 0.014 | 0.006 | 0.006 | 0.007 | 0.000 |
+| en_bbh_reasoning_about_colored_objects_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -33.33% | +133.33% | +0.00% | +0.00% | +16.67% | -100.00% |
+| en_bbh_ruin_names_exact_match | 250 | 0.000 | 0.004 | 0.004 | 0.000 | 0.000 | 0.000 | 0.004 | 0.000 | **0.008** |
+| en_bbh_ruin_names_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_ruin_names_exact_match_stderr | 250 | 0.000 | 0.004 | 0.004 | 0.000 | 0.000 | 0.000 | 0.004 | 0.000 | 0.006 |
+| en_bbh_ruin_names_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_salient_translation_error_detection_exact_match | 250 | 0.000 | 0.004 | 0.000 | 0.004 | 0.004 | 0.000 | 0.000 | **0.008** | 0.000 |
+| en_bbh_salient_translation_error_detection_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_salient_translation_error_detection_exact_match_stderr | 250 | 0.000 | 0.004 | 0.000 | 0.004 | 0.004 | 0.000 | 0.000 | 0.006 | 0.000 |
+| en_bbh_salient_translation_error_detection_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_snarks_exact_match | 178 | 0.006 | **0.011** | **0.011** | 0.000 | 0.000 | 0.000 | **0.011** | 0.000 | **0.011** |
+| en_bbh_snarks_exact_match_gain_base |  | -- | +83.33% | +83.33% | -100.00% | -100.00% | -100.00% | +83.33% | -100.00% | +83.33% |
+| en_bbh_snarks_exact_match_stderr | 178 | 0.006 | 0.008 | 0.008 | 0.000 | 0.000 | 0.000 | 0.008 | 0.000 | 0.008 |
+| en_bbh_snarks_exact_match_stderr_gain_base |  | -- | +33.33% | +33.33% | -100.00% | -100.00% | -100.00% | +33.33% | -100.00% | +33.33% |
+| en_bbh_sports_understanding_exact_match | 250 | **0.016** | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_sports_understanding_exact_match_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% |
+| en_bbh_sports_understanding_exact_match_stderr | 250 | 0.008 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_sports_understanding_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% | -100.00% |
+| en_bbh_temporal_sequences_exact_match | 250 | 0.028 | 0.008 | 0.012 | 0.020 | 0.020 | **0.168** | 0.024 | 0.028 | 0.044 |
+| en_bbh_temporal_sequences_exact_match_gain_base |  | -- | -71.43% | -57.14% | -28.57% | -28.57% | +500.00% | -14.29% | +0.00% | +57.14% |
+| en_bbh_temporal_sequences_exact_match_stderr | 250 | 0.010 | 0.006 | 0.007 | 0.009 | 0.009 | 0.024 | 0.010 | 0.010 | 0.013 |
+| en_bbh_temporal_sequences_exact_match_stderr_gain_base |  | -- | -40.00% | -30.00% | -10.00% | -10.00% | +140.00% | +0.00% | +0.00% | +30.00% |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match | 250 | **0.044** | 0.004 | 0.000 | 0.004 | 0.000 | 0.000 | 0.008 | 0.028 | 0.008 |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match_gain_base |  | -- | -90.91% | -100.00% | -90.91% | -100.00% | -100.00% | -81.82% | -36.36% | -81.82% |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match_stderr | 250 | 0.013 | 0.004 | 0.000 | 0.004 | 0.000 | 0.000 | 0.006 | 0.010 | 0.006 |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match_stderr_gain_base |  | -- | -69.23% | -100.00% | -69.23% | -100.00% | -100.00% | -53.85% | -23.08% | -53.85% |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match | 250 | **0.032** | 0.000 | 0.008 | 0.008 | 0.016 | 0.004 | 0.000 | 0.008 | 0.012 |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match_gain_base |  | -- | -100.00% | -75.00% | -75.00% | -50.00% | -87.50% | -100.00% | -75.00% | -62.50% |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match_stderr | 250 | 0.011 | 0.000 | 0.006 | 0.006 | 0.008 | 0.004 | 0.000 | 0.006 | 0.007 |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match_stderr_gain_base |  | -- | -100.00% | -45.45% | -45.45% | -27.27% | -63.64% | -100.00% | -45.45% | -36.36% |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match | 250 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.004 | 0.004 | **0.060** | 0.004 |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | +0.00% | +0.00% | +1400.00% | +0.00% |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match_stderr | 250 | 0.004 | 0.000 | 0.000 | 0.000 | 0.000 | 0.004 | 0.004 | 0.015 | 0.004 |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match_stderr_gain_base |  | -- | -100.00% | -100.00% | -100.00% | -100.00% | +0.00% | +0.00% | +275.00% | +0.00% |
+| en_bbh_web_of_lies_exact_match | 250 | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** |
+| en_bbh_web_of_lies_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_web_of_lies_exact_match_stderr | 250 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_web_of_lies_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_word_sorting_exact_match | 250 | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** |
+| en_bbh_word_sorting_exact_match_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_bbh_word_sorting_exact_match_stderr | 250 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| en_bbh_word_sorting_exact_match_stderr_gain_base |  | -- |  |  |  |  |  |  |  |  |
+| en_belebele_acc | 900 | **0.840** | 0.782 | 0.773 | 0.759 | 0.794 | 0.787 | 0.811 | 0.819 | 0.772 |
+| en_belebele_acc_gain_base |  | -- | -6.90% | -7.98% | -9.64% | -5.48% | -6.31% | -3.45% | -2.50% | -8.10% |
+| en_belebele_acc_norm | 900 | **0.840** | 0.782 | 0.773 | 0.759 | 0.794 | 0.787 | 0.811 | 0.819 | 0.772 |
+| en_belebele_acc_norm_gain_base |  | -- | -6.90% | -7.98% | -9.64% | -5.48% | -6.31% | -3.45% | -2.50% | -8.10% |
+| en_belebele_acc_norm_stderr | 900 | 0.012 | 0.014 | 0.014 | 0.014 | 0.013 | 0.014 | 0.013 | 0.013 | 0.014 |
+| en_belebele_acc_norm_stderr_gain_base |  | -- | +16.67% | +16.67% | +16.67% | +8.33% | +16.67% | +8.33% | +8.33% | +16.67% |
+| en_belebele_acc_stderr | 900 | 0.012 | 0.014 | 0.014 | 0.014 | 0.013 | 0.014 | 0.013 | 0.013 | 0.014 |
+| en_belebele_acc_stderr_gain_base |  | -- | +16.67% | +16.67% | +16.67% | +8.33% | +16.67% | +8.33% | +8.33% | +16.67% |
+| en_global_mmlu_lite_acc | 400 | **0.700** | 0.665 | 0.650 | 0.627 | 0.647 | 0.647 | 0.667 | 0.655 | 0.637 |
+| en_global_mmlu_lite_acc_gain_base |  | -- | -5.00% | -7.14% | -10.43% | -7.57% | -7.57% | -4.71% | -6.43% | -9.00% |
+| en_global_mmlu_lite_acc_norm | 400 | **0.700** | 0.665 | 0.650 | 0.627 | 0.647 | 0.647 | 0.667 | 0.655 | 0.637 |
+| en_global_mmlu_lite_acc_norm_gain_base |  | -- | -5.00% | -7.14% | -10.43% | -7.57% | -7.57% | -4.71% | -6.43% | -9.00% |
+| en_global_mmlu_lite_acc_norm_stderr | 400 | 0.023 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 |
+| en_global_mmlu_lite_acc_norm_stderr_gain_base |  | -- | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% |
+| en_global_mmlu_lite_acc_stderr | 400 | 0.023 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 | 0.024 |
+| en_global_mmlu_lite_acc_stderr_gain_base |  | -- | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% | +4.35% |
+| en_gpqa_diamond_zeroshot_acc | 198 | 0.258 | **0.288** | 0.268 | 0.263 | 0.283 | 0.268 | 0.283 | 0.253 | 0.253 |
+| en_gpqa_diamond_zeroshot_acc_gain_base |  | -- | +11.63% | +3.88% | +1.94% | +9.69% | +3.88% | +9.69% | -1.94% | -1.94% |
+| en_gpqa_diamond_zeroshot_acc_norm | 198 | 0.258 | **0.288** | 0.268 | 0.263 | 0.283 | 0.268 | 0.283 | 0.253 | 0.253 |
+| en_gpqa_diamond_zeroshot_acc_norm_gain_base |  | -- | +11.63% | +3.88% | +1.94% | +9.69% | +3.88% | +9.69% | -1.94% | -1.94% |
+| en_gpqa_diamond_zeroshot_acc_norm_stderr | 198 | 0.031 | 0.032 | 0.032 | 0.031 | 0.032 | 0.032 | 0.032 | 0.031 | 0.031 |
+| en_gpqa_diamond_zeroshot_acc_norm_stderr_gain_base |  | -- | +3.23% | +3.23% | +0.00% | +3.23% | +3.23% | +3.23% | +0.00% | +0.00% |
+| en_gpqa_diamond_zeroshot_acc_stderr | 198 | 0.031 | 0.032 | 0.032 | 0.031 | 0.032 | 0.032 | 0.032 | 0.031 | 0.031 |
+| en_gpqa_diamond_zeroshot_acc_stderr_gain_base |  | -- | +3.23% | +3.23% | +0.00% | +3.23% | +3.23% | +3.23% | +0.00% | +0.00% |
+| en_hellaswag_acc | 10,042 | 0.593 | 0.593 | 0.592 | 0.598 | 0.588 | 0.599 | **0.601** | 0.600 | 0.594 |
+| en_hellaswag_acc_gain_base |  | -- | +0.00% | -0.17% | +0.84% | -0.84% | +1.01% | +1.35% | +1.18% | +0.17% |
+| en_hellaswag_acc_norm | 10,042 | 0.785 | 0.786 | 0.786 | **0.792** | 0.787 | 0.790 | 0.791 | 0.790 | 0.784 |
+| en_hellaswag_acc_norm_gain_base |  | -- | +0.13% | +0.13% | +0.89% | +0.25% | +0.64% | +0.76% | +0.64% | -0.13% |
+| en_hellaswag_acc_norm_stderr | 10,042 | 0.004 | 0.004 | 0.004 | 0.004 | 0.004 | 0.004 | 0.004 | 0.004 | 0.004 |
+| en_hellaswag_acc_norm_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_hellaswag_acc_stderr | 10,042 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| en_hellaswag_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_mgsm_direct_exact_match | 250 | **0.320** | 0.204 | 0.168 | 0.168 | 0.112 | 0.280 | 0.232 | 0.232 | 0.212 |
+| en_mgsm_direct_exact_match_gain_base |  | -- | -36.25% | -47.50% | -47.50% | -65.00% | -12.50% | -27.50% | -27.50% | -33.75% |
+| en_mgsm_direct_exact_match_stderr | 250 | 0.030 | 0.026 | 0.024 | 0.024 | 0.020 | 0.028 | 0.027 | 0.027 | 0.026 |
+| en_mgsm_direct_exact_match_stderr_gain_base |  | -- | -13.33% | -20.00% | -20.00% | -33.33% | -6.67% | -10.00% | -10.00% | -13.33% |
+| en_multiwikiqa_exact_match | 4,999 | 0.405 | 0.270 | 0.348 | 0.427 | 0.399 | 0.431 | **0.463** | 0.432 | 0.433 |
+| en_multiwikiqa_exact_match_gain_base |  | -- | -33.33% | -14.07% | +5.43% | -1.48% | +6.42% | +14.32% | +6.67% | +6.91% |
+| en_multiwikiqa_exact_match_stderr | 4,999 | 0.007 | 0.006 | 0.007 | 0.007 | 0.007 | 0.007 | 0.007 | 0.007 | 0.007 |
+| en_multiwikiqa_exact_match_stderr_gain_base |  | -- | -14.29% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_multiwikiqa_f1 | 4,999 | 0.563 | 0.521 | 0.572 | 0.586 | 0.611 | 0.614 | **0.652** | 0.627 | 0.615 |
+| en_multiwikiqa_f1_gain_base |  | -- | -7.46% | +1.60% | +4.09% | +8.53% | +9.06% | +15.81% | +11.37% | +9.24% |
+| en_multiwikiqa_f1_stderr | 4,999 | 0.006 | 0.005 | 0.006 | 0.006 | 0.006 | 0.006 | 0.006 | 0.006 | 0.006 |
+| en_multiwikiqa_f1_stderr_gain_base |  | -- | -16.67% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_piqa_acc | 1,838 | **0.796** | 0.782 | 0.787 | 0.792 | 0.794 | 0.786 | 0.794 | 0.795 | 0.788 |
+| en_piqa_acc_gain_base |  | -- | -1.76% | -1.13% | -0.50% | -0.25% | -1.26% | -0.25% | -0.13% | -1.01% |
+| en_piqa_acc_norm | 1,838 | 0.808 | 0.807 | 0.811 | 0.805 | 0.807 | 0.805 | **0.814** | 0.812 | 0.801 |
+| en_piqa_acc_norm_gain_base |  | -- | -0.12% | +0.37% | -0.37% | -0.12% | -0.37% | +0.74% | +0.50% | -0.87% |
+| en_piqa_acc_norm_stderr | 1,838 | 0.009 | 0.009 | 0.009 | 0.009 | 0.009 | 0.009 | 0.009 | 0.009 | 0.009 |
+| en_piqa_acc_norm_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_piqa_acc_stderr | 1,838 | 0.009 | 0.010 | 0.010 | 0.009 | 0.009 | 0.010 | 0.009 | 0.009 | 0.010 |
+| en_piqa_acc_stderr_gain_base |  | -- | +11.11% | +11.11% | +0.00% | +0.00% | +11.11% | +0.00% | +0.00% | +11.11% |
+| en_truthfulqa_mc1_acc | 817 | **0.299** | 0.264 | 0.274 | 0.256 | 0.264 | 0.271 | 0.259 | 0.257 | 0.262 |
+| en_truthfulqa_mc1_acc_gain_base |  | -- | -11.71% | -8.36% | -14.38% | -11.71% | -9.36% | -13.38% | -14.05% | -12.37% |
+| en_truthfulqa_mc1_acc_stderr | 817 | 0.016 | 0.015 | 0.016 | 0.015 | 0.015 | 0.016 | 0.015 | 0.015 | 0.015 |
+| en_truthfulqa_mc1_acc_stderr_gain_base |  | -- | -6.25% | +0.00% | -6.25% | -6.25% | +0.00% | -6.25% | -6.25% | -6.25% |
+| en_winogrande_acc | 1,267 | 0.702 | 0.695 | 0.687 | 0.688 | **0.709** | 0.703 | 0.702 | 0.702 | 0.698 |
+| en_winogrande_acc_gain_base |  | -- | -1.00% | -2.14% | -1.99% | +1.00% | +0.14% | +0.00% | +0.00% | -0.57% |
+| en_winogrande_acc_stderr | 1,267 | 0.013 | 0.013 | 0.013 | 0.013 | 0.013 | 0.013 | 0.013 | 0.013 | 0.013 |
+| en_winogrande_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_xnli_acc | 2,490 | 0.546 | 0.525 | 0.524 | 0.507 | 0.533 | 0.543 | 0.535 | **0.550** | 0.547 |
+| en_xnli_acc_gain_base |  | -- | -3.85% | -4.03% | -7.14% | -2.38% | -0.55% | -2.01% | +0.73% | +0.18% |
+| en_xnli_acc_stderr | 2,490 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 | 0.010 |
+| en_xnli_acc_stderr_gain_base |  | -- | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% | +0.00% |
+| en_xstorycloze_acc | 1,511 | 0.778 | 0.791 | 0.786 | 0.779 | 0.792 | **0.800** | 0.797 | 0.795 | 0.789 |
+| en_xstorycloze_acc_gain_base |  | -- | +1.67% | +1.03% | +0.13% | +1.80% | +2.83% | +2.44% | +2.19% | +1.41% |
+| en_xstorycloze_acc_stderr | 1,511 | 0.011 | 0.010 | 0.011 | 0.011 | 0.010 | 0.010 | 0.010 | 0.010 | 0.011 |
+| en_xstorycloze_acc_stderr_gain_base |  | -- | -9.09% | +0.00% | +0.00% | -9.09% | -9.09% | -9.09% | -9.09% | +0.00% |
+| Average of variant across benchmarks |  | **0.146** | 0.132 | 0.132 | 0.133 | 0.137 | 0.139 | 0.139 | 0.138 | 0.135 |
+| Average of variant gain in relation to base across benchmarks |  | -- | -31.95% | -28.38% | -27.96% | -12.88% | -16.02% | -22.33% | -2.15% | -22.88% |
+
+
+## Metric notes
+
+| Metric | Benchmark | Language | Meaning and interpretation | Instances |
+| --- | --- | --- | --- | ---: |
+| flores200_en_to_gn_bleu | FLORES-200 EN→GN | Guarani (gn) | BLEU translation score; higher is better. | 1,012 |
+| flores200_en_to_gn_bleu_stderr | FLORES-200 EN→GN | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 1,012 |
+| flores200_en_to_gn_chrf++ | FLORES-200 EN→GN | Guarani (gn) | Character n-gram F-score; higher is better. | 1,012 |
+| flores200_es_to_gn_bleu | FLORES-200 ES→GN | Guarani (gn) | BLEU translation score; higher is better. | 1,012 |
+| flores200_es_to_gn_bleu_stderr | FLORES-200 ES→GN | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 1,012 |
+| flores200_es_to_gn_chrf++ | FLORES-200 ES→GN | Guarani (gn) | Character n-gram F-score; higher is better. | 1,012 |
+| gn_belebele_acc | Belebele | Guarani (gn) | Accuracy; higher is better. | 900 |
+| gn_belebele_acc_norm | Belebele | Guarani (gn) | Length-normalized multiple-choice accuracy; higher is better. | 900 |
+| gn_belebele_acc_norm_stderr | Belebele | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| gn_belebele_acc_stderr | Belebele | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| gn_global_mmlu_lite_acc | Global MMLU Lite | Guarani (gn) | Accuracy; higher is better. | 400 |
+| gn_global_mmlu_lite_acc_norm | Global MMLU Lite | Guarani (gn) | Length-normalized multiple-choice accuracy; higher is better. | 400 |
+| gn_global_mmlu_lite_acc_norm_stderr | Global MMLU Lite | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| gn_global_mmlu_lite_acc_stderr | Global MMLU Lite | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| gn_multiwikiqa_exact_match | MultiWikiQA | Guarani (gn) | Exact-match accuracy; higher is better. | 5,003 |
+| gn_multiwikiqa_exact_match_stderr | MultiWikiQA | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 5,003 |
+| gn_multiwikiqa_f1 | MultiWikiQA | Guarani (gn) | Token-overlap F1 score; higher is better. | 5,003 |
+| gn_multiwikiqa_f1_stderr | MultiWikiQA | Guarani (gn) | Standard error of the reported score; lower means less sampling uncertainty. | 5,003 |
+| es_arc_challenge_acc | ARC Challenge | Spanish (es) | Accuracy; higher is better. | 299 |
+| es_arc_challenge_acc_norm | ARC Challenge | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 299 |
+| es_arc_challenge_acc_norm_stderr | ARC Challenge | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 299 |
+| es_arc_challenge_acc_stderr | ARC Challenge | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 299 |
+| es_arc_easy_acc | ARC Easy | Spanish (es) | Accuracy; higher is better. | 570 |
+| es_arc_easy_acc_norm | ARC Easy | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 570 |
+| es_arc_easy_acc_norm_stderr | ARC Easy | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 570 |
+| es_arc_easy_acc_stderr | ARC Easy | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 570 |
+| es_belebele_acc | Belebele | Spanish (es) | Accuracy; higher is better. | 900 |
+| es_belebele_acc_norm | Belebele | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 900 |
+| es_belebele_acc_norm_stderr | Belebele | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| es_belebele_acc_stderr | Belebele | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| es_copa_acc | Copa | Spanish (es) | Accuracy; higher is better. | 500 |
+| es_copa_acc_stderr | Copa | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 500 |
+| es_global_mmlu_lite_acc | Global MMLU Lite | Spanish (es) | Accuracy; higher is better. | 400 |
+| es_global_mmlu_lite_acc_norm | Global MMLU Lite | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 400 |
+| es_global_mmlu_lite_acc_norm_stderr | Global MMLU Lite | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| es_global_mmlu_lite_acc_stderr | Global MMLU Lite | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| es_gpqa_diamond_acc | GPQA Diamond | Spanish (es) | Accuracy; higher is better. | 198 |
+| es_gpqa_diamond_acc_norm | GPQA Diamond | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 198 |
+| es_gpqa_diamond_acc_norm_stderr | GPQA Diamond | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 198 |
+| es_gpqa_diamond_acc_stderr | GPQA Diamond | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 198 |
+| es_hellaswag_acc | HellaSwag | Spanish (es) | Accuracy; higher is better. | 9,374 |
+| es_hellaswag_acc_norm | HellaSwag | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 9,374 |
+| es_hellaswag_acc_norm_stderr | HellaSwag | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 9,374 |
+| es_hellaswag_acc_stderr | HellaSwag | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 9,374 |
+| es_mgsm_direct_exact_match | MGSM | Spanish (es) | Exact-match accuracy; higher is better. | 250 |
+| es_mgsm_direct_exact_match_stderr | MGSM | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| es_multiwikiqa_exact_match | MultiWikiQA | Spanish (es) | Exact-match accuracy; higher is better. | 5,001 |
+| es_multiwikiqa_exact_match_stderr | MultiWikiQA | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 5,001 |
+| es_multiwikiqa_f1 | MultiWikiQA | Spanish (es) | Token-overlap F1 score; higher is better. | 5,001 |
+| es_multiwikiqa_f1_stderr | MultiWikiQA | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 5,001 |
+| es_piqa_acc | PIQA | Spanish (es) | Accuracy; higher is better. | 100 |
+| es_piqa_acc_bytes | PIQA | Spanish (es) | Accuracy; higher is better. | 100 |
+| es_piqa_acc_bytes_stderr | PIQA | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 100 |
+| es_piqa_acc_norm | PIQA | Spanish (es) | Length-normalized multiple-choice accuracy; higher is better. | 100 |
+| es_piqa_acc_norm_stderr | PIQA | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 100 |
+| es_piqa_acc_stderr | PIQA | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 100 |
+| es_truthfulqa_mc1_acc | TruthfulQA MC1 | Spanish (es) | Accuracy; higher is better. | 789 |
+| es_truthfulqa_mc1_acc_stderr | TruthfulQA MC1 | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 789 |
+| es_xnli_acc | XNLI | Spanish (es) | Accuracy; higher is better. | 2,490 |
+| es_xnli_acc_stderr | XNLI | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 2,490 |
+| es_xstorycloze_acc | XStoryCloze | Spanish (es) | Accuracy; higher is better. | 1,511 |
+| es_xstorycloze_acc_stderr | XStoryCloze | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 1,511 |
+| flores200_gn_to_es_bleu | FLORES-200 GN→ES | Spanish (es) | BLEU translation score; higher is better. | 1,012 |
+| flores200_gn_to_es_bleu_stderr | FLORES-200 GN→ES | Spanish (es) | Standard error of the reported score; lower means less sampling uncertainty. | 1,012 |
+| flores200_gn_to_es_chrf++ | FLORES-200 GN→ES | Spanish (es) | Character n-gram F-score; higher is better. | 1,012 |
+| en_arc_challenge_acc | ARC Challenge | English (en) | Accuracy; higher is better. | 1,172 |
+| en_arc_challenge_acc_norm | ARC Challenge | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 1,172 |
+| en_arc_challenge_acc_norm_stderr | ARC Challenge | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,172 |
+| en_arc_challenge_acc_stderr | ARC Challenge | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,172 |
+| en_arc_easy_acc | ARC Easy | English (en) | Accuracy; higher is better. | 2,376 |
+| en_arc_easy_acc_norm | ARC Easy | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 2,376 |
+| en_arc_easy_acc_norm_stderr | ARC Easy | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 2,376 |
+| en_arc_easy_acc_stderr | ARC Easy | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 2,376 |
+| en_bbh_boolean_expressions_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_boolean_expressions_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_causal_judgement_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 187 |
+| en_bbh_causal_judgement_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 187 |
+| en_bbh_date_understanding_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_date_understanding_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_disambiguation_qa_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_disambiguation_qa_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_dyck_languages_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_dyck_languages_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 6,511 |
+| en_bbh_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | not recorded |
+| en_bbh_formal_fallacies_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_formal_fallacies_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_geometric_shapes_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_geometric_shapes_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_hyperbaton_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_hyperbaton_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_logical_deduction_five_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_logical_deduction_five_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_logical_deduction_seven_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_logical_deduction_seven_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_logical_deduction_three_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_logical_deduction_three_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_movie_recommendation_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_movie_recommendation_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_multistep_arithmetic_two_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_multistep_arithmetic_two_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_navigate_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_navigate_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_object_counting_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_object_counting_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_penguins_in_a_table_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 146 |
+| en_bbh_penguins_in_a_table_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 146 |
+| en_bbh_reasoning_about_colored_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_reasoning_about_colored_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_ruin_names_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_ruin_names_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_salient_translation_error_detection_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_salient_translation_error_detection_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_snarks_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 178 |
+| en_bbh_snarks_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 178 |
+| en_bbh_sports_understanding_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_sports_understanding_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_temporal_sequences_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_temporal_sequences_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_tracking_shuffled_objects_five_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_tracking_shuffled_objects_seven_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_tracking_shuffled_objects_three_objects_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_web_of_lies_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_web_of_lies_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_bbh_word_sorting_exact_match | BIG-Bench Hard | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_bbh_word_sorting_exact_match_stderr | BIG-Bench Hard | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_belebele_acc | Belebele | English (en) | Accuracy; higher is better. | 900 |
+| en_belebele_acc_norm | Belebele | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 900 |
+| en_belebele_acc_norm_stderr | Belebele | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| en_belebele_acc_stderr | Belebele | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 900 |
+| en_global_mmlu_lite_acc | Global MMLU Lite | English (en) | Accuracy; higher is better. | 400 |
+| en_global_mmlu_lite_acc_norm | Global MMLU Lite | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 400 |
+| en_global_mmlu_lite_acc_norm_stderr | Global MMLU Lite | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| en_global_mmlu_lite_acc_stderr | Global MMLU Lite | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 400 |
+| en_gpqa_diamond_zeroshot_acc | GPQA Diamond | English (en) | Accuracy; higher is better. | 198 |
+| en_gpqa_diamond_zeroshot_acc_norm | GPQA Diamond | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 198 |
+| en_gpqa_diamond_zeroshot_acc_norm_stderr | GPQA Diamond | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 198 |
+| en_gpqa_diamond_zeroshot_acc_stderr | GPQA Diamond | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 198 |
+| en_hellaswag_acc | HellaSwag | English (en) | Accuracy; higher is better. | 10,042 |
+| en_hellaswag_acc_norm | HellaSwag | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 10,042 |
+| en_hellaswag_acc_norm_stderr | HellaSwag | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 10,042 |
+| en_hellaswag_acc_stderr | HellaSwag | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 10,042 |
+| en_mgsm_direct_exact_match | MGSM | English (en) | Exact-match accuracy; higher is better. | 250 |
+| en_mgsm_direct_exact_match_stderr | MGSM | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 250 |
+| en_multiwikiqa_exact_match | MultiWikiQA | English (en) | Exact-match accuracy; higher is better. | 4,999 |
+| en_multiwikiqa_exact_match_stderr | MultiWikiQA | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 4,999 |
+| en_multiwikiqa_f1 | MultiWikiQA | English (en) | Token-overlap F1 score; higher is better. | 4,999 |
+| en_multiwikiqa_f1_stderr | MultiWikiQA | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 4,999 |
+| en_piqa_acc | PIQA | English (en) | Accuracy; higher is better. | 1,838 |
+| en_piqa_acc_norm | PIQA | English (en) | Length-normalized multiple-choice accuracy; higher is better. | 1,838 |
+| en_piqa_acc_norm_stderr | PIQA | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,838 |
+| en_piqa_acc_stderr | PIQA | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,838 |
+| en_truthfulqa_mc1_acc | TruthfulQA MC1 | English (en) | Accuracy; higher is better. | 817 |
+| en_truthfulqa_mc1_acc_stderr | TruthfulQA MC1 | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 817 |
+| en_winogrande_acc | WinoGrande | English (en) | Accuracy; higher is better. | 1,267 |
+| en_winogrande_acc_stderr | WinoGrande | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,267 |
+| en_xnli_acc | XNLI | English (en) | Accuracy; higher is better. | 2,490 |
+| en_xnli_acc_stderr | XNLI | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 2,490 |
+| en_xstorycloze_acc | XStoryCloze | English (en) | Accuracy; higher is better. | 1,511 |
+| en_xstorycloze_acc_stderr | XStoryCloze | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,511 |
+| flores200_gn_to_en_bleu | FLORES-200 GN→EN | English (en) | BLEU translation score; higher is better. | 1,012 |
+| flores200_gn_to_en_bleu_stderr | FLORES-200 GN→EN | English (en) | Standard error of the reported score; lower means less sampling uncertainty. | 1,012 |
+| flores200_gn_to_en_chrf++ | FLORES-200 GN→EN | English (en) | Character n-gram F-score; higher is better. | 1,012 |
+| gn_bits_per_byte | CoreGuapa perplexity | Guarani (gn) | Bits per byte; lower is better. | 66 |
+| gn_byte_perplexity | CoreGuapa perplexity | Guarani (gn) | Byte-level perplexity; lower is better. | 66 |
+| gn_word_perplexity | CoreGuapa perplexity | Guarani (gn) | Word-level perplexity; lower is better. | 66 |

@@ -1,0 +1,365 @@
+{
+  "results": {
+    "guarani_flores200_eng_to_grn": {
+      "name": "guarani_flores200_eng_to_grn",
+      "alias": "guarani_flores200_eng_to_grn",
+      "sample_len": 1012,
+      "bleu,none": 1.2525368639888628,
+      "bleu_stderr,none": 0.16771179840703676,
+      "chrf_plus_plus,none": 12.942526947153532,
+      "chrf_plus_plus_stderr,none": "N/A"
+    },
+    "guarani_flores200_grn_to_eng": {
+      "name": "guarani_flores200_grn_to_eng",
+      "alias": "guarani_flores200_grn_to_eng",
+      "sample_len": 1012,
+      "bleu,none": 18.262074045975197,
+      "bleu_stderr,none": 0.5263606293140421,
+      "chrf_plus_plus,none": 40.593796989435454,
+      "chrf_plus_plus_stderr,none": "N/A"
+    },
+    "guarani_flores200_grn_to_spa": {
+      "name": "guarani_flores200_grn_to_spa",
+      "alias": "guarani_flores200_grn_to_spa",
+      "sample_len": 1012,
+      "bleu,none": 10.5824026590172,
+      "bleu_stderr,none": 0.39320701138889336,
+      "chrf_plus_plus,none": 31.808240100584328,
+      "chrf_plus_plus_stderr,none": "N/A"
+    },
+    "guarani_flores200_spa_to_grn": {
+      "name": "guarani_flores200_spa_to_grn",
+      "alias": "guarani_flores200_spa_to_grn",
+      "sample_len": 1012,
+      "bleu,none": 0.3008442380534111,
+      "bleu_stderr,none": 0.0676125672958862,
+      "chrf_plus_plus,none": 8.482140512759823,
+      "chrf_plus_plus_stderr,none": "N/A"
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "guarani_flores200_eng_to_grn": {
+      "task": "guarani_flores200_eng_to_grn",
+      "dataset_path": "facebook/flores",
+      "dataset_name": "all",
+      "test_split": "devtest",
+      "fewshot_split": "dev",
+      "doc_to_text": "Translate the following English sentence into Guarani.\nEnglish: {{sentence_eng_Latn}}\nGuarani:",
+      "doc_to_target": "{{sentence_grn_Latn}}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "dev",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Translate the following English sentence into Guarani.\nEnglish: {{sentence_eng_Latn}}\nGuarani:",
+        "doc_to_choice": null,
+        "doc_to_target": "{{sentence_grn_Latn}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "bleu",
+          "aggregation": "bleu",
+          "higher_is_better": true
+        },
+        {
+          "metric": "def chrf_plus_plus(predictions: list[str], references: list[str]) -> tuple[str, str]:\n    \"\"\"Return one translation pair for chrF++ aggregation.\n\n    Args:\n        predictions: Generated translation strings from lm-eval.\n        references: Reference translation strings from lm-eval.\n\n    Returns:\n        Reference and prediction pair.\n    \"\"\"\n    prediction = predictions[0].strip() if predictions else ''\n    reference = references[0].strip() if references else ''\n    return reference, prediction\n",
+          "aggregation": "def aggregate_chrf_plus_plus(items: list[tuple[str, str]]) -> float:\n    \"\"\"Compute corpus chrF++ with sacrebleu.\n\n    Args:\n        items: Reference and prediction pairs.\n\n    Returns:\n        sacrebleu corpus chrF++ score.\n    \"\"\"\n    references = [reference for reference, _ in items]\n    predictions = [prediction for _, prediction in items]\n    return sacrebleu.corpus_chrf(predictions, [references], word_order=2).score\n",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "\n",
+          "</s>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0,
+        "max_gen_toks": 256
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/guarani_flores200_eng_to_grn.yaml"
+      }
+    },
+    "guarani_flores200_grn_to_eng": {
+      "task": "guarani_flores200_grn_to_eng",
+      "dataset_path": "facebook/flores",
+      "dataset_name": "all",
+      "test_split": "devtest",
+      "fewshot_split": "dev",
+      "doc_to_text": "Translate the following Guarani sentence into English.\nGuarani: {{sentence_grn_Latn}}\nEnglish:",
+      "doc_to_target": "{{sentence_eng_Latn}}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "dev",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Translate the following Guarani sentence into English.\nGuarani: {{sentence_grn_Latn}}\nEnglish:",
+        "doc_to_choice": null,
+        "doc_to_target": "{{sentence_eng_Latn}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "bleu",
+          "aggregation": "bleu",
+          "higher_is_better": true
+        },
+        {
+          "metric": "def chrf_plus_plus(predictions: list[str], references: list[str]) -> tuple[str, str]:\n    \"\"\"Return one translation pair for chrF++ aggregation.\n\n    Args:\n        predictions: Generated translation strings from lm-eval.\n        references: Reference translation strings from lm-eval.\n\n    Returns:\n        Reference and prediction pair.\n    \"\"\"\n    prediction = predictions[0].strip() if predictions else ''\n    reference = references[0].strip() if references else ''\n    return reference, prediction\n",
+          "aggregation": "def aggregate_chrf_plus_plus(items: list[tuple[str, str]]) -> float:\n    \"\"\"Compute corpus chrF++ with sacrebleu.\n\n    Args:\n        items: Reference and prediction pairs.\n\n    Returns:\n        sacrebleu corpus chrF++ score.\n    \"\"\"\n    references = [reference for reference, _ in items]\n    predictions = [prediction for _, prediction in items]\n    return sacrebleu.corpus_chrf(predictions, [references], word_order=2).score\n",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "\n",
+          "</s>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0,
+        "max_gen_toks": 256
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/guarani_flores200_grn_to_eng.yaml"
+      }
+    },
+    "guarani_flores200_grn_to_spa": {
+      "task": "guarani_flores200_grn_to_spa",
+      "dataset_path": "facebook/flores",
+      "dataset_name": "all",
+      "test_split": "devtest",
+      "fewshot_split": "dev",
+      "doc_to_text": "Traduce la siguiente oración en guaraní al español.\nGuaraní: {{sentence_grn_Latn}}\nEspañol:",
+      "doc_to_target": "{{sentence_spa_Latn}}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "dev",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Traduce la siguiente oración en guaraní al español.\nGuaraní: {{sentence_grn_Latn}}\nEspañol:",
+        "doc_to_choice": null,
+        "doc_to_target": "{{sentence_spa_Latn}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "bleu",
+          "aggregation": "bleu",
+          "higher_is_better": true
+        },
+        {
+          "metric": "def chrf_plus_plus(predictions: list[str], references: list[str]) -> tuple[str, str]:\n    \"\"\"Return one translation pair for chrF++ aggregation.\n\n    Args:\n        predictions: Generated translation strings from lm-eval.\n        references: Reference translation strings from lm-eval.\n\n    Returns:\n        Reference and prediction pair.\n    \"\"\"\n    prediction = predictions[0].strip() if predictions else ''\n    reference = references[0].strip() if references else ''\n    return reference, prediction\n",
+          "aggregation": "def aggregate_chrf_plus_plus(items: list[tuple[str, str]]) -> float:\n    \"\"\"Compute corpus chrF++ with sacrebleu.\n\n    Args:\n        items: Reference and prediction pairs.\n\n    Returns:\n        sacrebleu corpus chrF++ score.\n    \"\"\"\n    references = [reference for reference, _ in items]\n    predictions = [prediction for _, prediction in items]\n    return sacrebleu.corpus_chrf(predictions, [references], word_order=2).score\n",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "\n",
+          "</s>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0,
+        "max_gen_toks": 256
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/guarani_flores200_grn_to_spa.yaml"
+      }
+    },
+    "guarani_flores200_spa_to_grn": {
+      "task": "guarani_flores200_spa_to_grn",
+      "dataset_path": "facebook/flores",
+      "dataset_name": "all",
+      "test_split": "devtest",
+      "fewshot_split": "dev",
+      "doc_to_text": "Traduce la siguiente oración en español al guaraní.\nEspañol: {{sentence_spa_Latn}}\nGuaraní:",
+      "doc_to_target": "{{sentence_grn_Latn}}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "dev",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Traduce la siguiente oración en español al guaraní.\nEspañol: {{sentence_spa_Latn}}\nGuaraní:",
+        "doc_to_choice": null,
+        "doc_to_target": "{{sentence_grn_Latn}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "bleu",
+          "aggregation": "bleu",
+          "higher_is_better": true
+        },
+        {
+          "metric": "def chrf_plus_plus(predictions: list[str], references: list[str]) -> tuple[str, str]:\n    \"\"\"Return one translation pair for chrF++ aggregation.\n\n    Args:\n        predictions: Generated translation strings from lm-eval.\n        references: Reference translation strings from lm-eval.\n\n    Returns:\n        Reference and prediction pair.\n    \"\"\"\n    prediction = predictions[0].strip() if predictions else ''\n    reference = references[0].strip() if references else ''\n    return reference, prediction\n",
+          "aggregation": "def aggregate_chrf_plus_plus(items: list[tuple[str, str]]) -> float:\n    \"\"\"Compute corpus chrF++ with sacrebleu.\n\n    Args:\n        items: Reference and prediction pairs.\n\n    Returns:\n        sacrebleu corpus chrF++ score.\n    \"\"\"\n    references = [reference for reference, _ in items]\n    predictions = [prediction for _, prediction in items]\n    return sacrebleu.corpus_chrf(predictions, [references], word_order=2).score\n",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "\n",
+          "</s>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0,
+        "max_gen_toks": 256
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/guarani_flores200_spa_to_grn.yaml"
+      }
+    }
+  },
+  "versions": {
+    "guarani_flores200_eng_to_grn": 1.0,
+    "guarani_flores200_grn_to_eng": 1.0,
+    "guarani_flores200_grn_to_spa": 1.0,
+    "guarani_flores200_spa_to_grn": 1.0
+  },
+  "n-shot": {
+    "guarani_flores200_eng_to_grn": 0,
+    "guarani_flores200_grn_to_eng": 0,
+    "guarani_flores200_grn_to_spa": 0,
+    "guarani_flores200_spa_to_grn": 0
+  },
+  "higher_is_better": {
+    "guarani_flores200_eng_to_grn": {
+      "bleu": true,
+      "chrf_plus_plus": true
+    },
+    "guarani_flores200_grn_to_eng": {
+      "bleu": true,
+      "chrf_plus_plus": true
+    },
+    "guarani_flores200_grn_to_spa": {
+      "bleu": true,
+      "chrf_plus_plus": true
+    },
+    "guarani_flores200_spa_to_grn": {
+      "bleu": true,
+      "chrf_plus_plus": true
+    }
+  },
+  "n-samples": {
+    "guarani_flores200_eng_to_grn": {
+      "original": 1012,
+      "effective": 1012
+    },
+    "guarani_flores200_grn_to_eng": {
+      "original": 1012,
+      "effective": 1012
+    },
+    "guarani_flores200_grn_to_spa": {
+      "original": 1012,
+      "effective": 1012
+    },
+    "guarani_flores200_spa_to_grn": {
+      "original": 1012,
+      "effective": 1012
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": {
+      "pretrained": "outputs/train/gemma4_4b/experiments/full/C5_kuatia_en20/gemma4_4b_full_C5_kuatia_en20",
+      "dtype": "bfloat16",
+      "trust_remote_code": false,
+      "tokenizer": "google/gemma-4-E4B"
+    },
+    "model_num_parameters": 7941100832,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "",
+    "batch_size": "auto",
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 20260721,
+    "numpy_seed": 20260721,
+    "torch_seed": 20260721,
+    "fewshot_seed": 20260721
+  },
+  "git_hash": "06c4940",
+  "date": 1791011364.3250372,
+  "pretty_env_info": "PyTorch version: 2.13.0+cu126\nIs debug build: False\nCUDA used to build PyTorch: 12.6\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.3 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.12.7 (main, Mar  6 2026, 20:03:49) [GCC 13.3.0] (64-bit runtime)\nPython platform: Linux-6.17.0-1022-azure-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: 12.6.85\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA H100 NVL\nNvidia driver version: 580.173.02\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  40\nOn-line CPU(s) list:                     0-39\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9V84 96-Core Processor\nCPU family:                              25\nModel:                                   17\nThread(s) per core:                      1\nCore(s) per socket:                      40\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                4800.08\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves user_shstk avx512_bf16 clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm\nVirtualization:                          AMD-V\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               1.3 MiB (40 instances)\nL1i cache:                               1.3 MiB (40 instances)\nL2 cache:                                40 MiB (40 instances)\nL3 cache:                                160 MiB (5 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-39\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Vulnerable: No microcode\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.1\n[pip3] nvidia-cublas==13.1.1.3\n[pip3] nvidia-cublas-cu12==12.6.4.1\n[pip3] nvidia-cuda-cupti==13.0.85\n[pip3] nvidia-cuda-cupti-cu12==12.6.80\n[pip3] nvidia-cuda-nvrtc==13.0.88\n[pip3] nvidia-cuda-nvrtc-cu12==12.6.85\n[pip3] nvidia-cuda-runtime==13.0.96\n[pip3] nvidia-cuda-runtime-cu12==12.6.77\n[pip3] nvidia-cudnn-cu12==9.10.2.21\n[pip3] nvidia-cudnn-cu13==9.20.0.48\n[pip3] nvidia-cufft==12.0.0.61\n[pip3] nvidia-cufft-cu12==11.3.0.4\n[pip3] nvidia-curand==10.4.0.35\n[pip3] nvidia-curand-cu12==10.3.7.77\n[pip3] nvidia-cusolver==12.0.4.66\n[pip3] nvidia-cusolver-cu12==11.7.1.2\n[pip3] nvidia-cusparse==12.6.3.3\n[pip3] nvidia-cusparse-cu12==12.5.4.2\n[pip3] nvidia-cusparselt-cu12==0.7.1\n[pip3] nvidia-cusparselt-cu13==0.8.1\n[pip3] nvidia-nccl-cu12==2.29.3\n[pip3] nvidia-nccl-cu13==2.29.7\n[pip3] nvidia-nvjitlink==13.3.33\n[pip3] nvidia-nvjitlink-cu12==12.6.85\n[pip3] nvidia-nvtx==13.0.85\n[pip3] nvidia-nvtx-cu12==12.6.77\n[pip3] torch==2.13.0+cu126\n[pip3] torchaudio==2.11.0+cu126\n[pip3] torchdata==0.11.0\n[pip3] torchvision==0.28.0+cu126\n[pip3] triton==3.7.1\n[conda] Could not collect",
+  "transformers_version": "5.8.0",
+  "lm_eval_version": "0.4.13.dev0",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<pad>",
+    "0"
+  ],
+  "tokenizer_eos_token": [
+    "<eos>",
+    "1"
+  ],
+  "tokenizer_bos_token": [
+    "<bos>",
+    "2"
+  ],
+  "eot_token_id": 1,
+  "max_length": 2048,
+  "guarania_evaluation": {
+    "status": "complete",
+    "executed_tasks": [
+      "guarani_flores200_eng_to_grn",
+      "guarani_flores200_grn_to_eng",
+      "guarani_flores200_grn_to_spa",
+      "guarani_flores200_spa_to_grn"
+    ],
+    "skipped_tasks": []
+  }
+}
