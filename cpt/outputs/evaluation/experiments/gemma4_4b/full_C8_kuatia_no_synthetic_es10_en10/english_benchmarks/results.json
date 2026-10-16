@@ -1,0 +1,726 @@
+{
+  "results": {
+    "arc_easy": {
+      "name": "arc_easy",
+      "alias": "arc_easy",
+      "sample_len": 570,
+      "acc_norm,none": 0.775438596491228,
+      "acc_norm_stderr,none": 0.01749383921498331
+    },
+    "arc_challenge": {
+      "name": "arc_challenge",
+      "alias": "arc_challenge",
+      "sample_len": 299,
+      "acc_norm,none": 0.6354515050167224,
+      "acc_norm_stderr,none": 0.02788115296335723
+    },
+    "global_piqa_nonparallel_cloze_eng_latn": {
+      "name": "global_piqa_nonparallel_cloze_eng_latn",
+      "alias": "global_piqa_nonparallel_cloze_eng_latn",
+      "sample_len": 100,
+      "acc_norm,none": 0.8,
+      "acc_norm_stderr,none": 0.04020151261036849
+    },
+    "hellaswag": {
+      "name": "hellaswag",
+      "alias": "hellaswag",
+      "sample_len": 10042,
+      "acc_norm,none": 0.80601473809998,
+      "acc_norm_stderr,none": 0.00394609353972263
+    },
+    "xstorycloze_en": {
+      "name": "xstorycloze_en",
+      "alias": "xstorycloze_en",
+      "sample_len": 1511,
+      "acc,none": 0.8186631369953673,
+      "acc_stderr,none": 0.009915330464757368
+    },
+    "gpqa_main_n_shot": {
+      "name": "gpqa_main_n_shot",
+      "alias": "gpqa_main_n_shot",
+      "sample_len": 448,
+      "acc,none": 0.33705357142857145,
+      "acc_stderr,none": 0.02235810146577637
+    },
+    "truthfulqa-multi_mc1_en": {
+      "name": "truthfulqa-multi_mc1_en",
+      "alias": "truthfulqa-multi_mc1_en",
+      "sample_len": 817,
+      "acc,none": 0.2423500611995104,
+      "acc_stderr,none": 0.015000674373570414
+    },
+    "english_wnli": {
+      "name": "english_wnli",
+      "alias": "english_wnli",
+      "sample_len": 71,
+      "acc,none": 0.3380281690140845,
+      "acc_stderr,none": 0.056538877391335146
+    },
+    "english_copa": {
+      "name": "english_copa",
+      "alias": "english_copa",
+      "sample_len": 100,
+      "acc,none": 0.88,
+      "acc_stderr,none": 0.032659863237109045
+    },
+    "mgsm_direct_en": {
+      "name": "mgsm_direct_en",
+      "alias": "mgsm_direct_en",
+      "sample_len": 250,
+      "exact_match,remove_whitespace": 0.024,
+      "exact_match_stderr,remove_whitespace": 0.009699087026964254,
+      "exact_match,flexible-extract": 0.208,
+      "exact_match_stderr,flexible-extract": 0.02572139890141639
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "arc_challenge": {
+      "task": "arc_challenge",
+      "dataset_path": "allenai/ai2_arc",
+      "dataset_name": "ARC-Challenge",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "validation",
+      "fewshot_split": "train",
+      "doc_to_text": "Question: {{question}}\nAnswer:",
+      "doc_to_target": "{{choices.label.index(answerKey)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "{{choices.text}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Question: {{question}}\nAnswer:",
+        "doc_to_choice": "{{choices.text}}",
+        "doc_to_target": "{{choices.label.index(answerKey)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 25,
+      "metric_list": [
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/arc/arc_challenge.yaml"
+      }
+    },
+    "arc_easy": {
+      "task": "arc_easy",
+      "dataset_path": "allenai/ai2_arc",
+      "dataset_name": "ARC-Easy",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "validation",
+      "doc_to_text": "Question: {{question}}\nAnswer:",
+      "doc_to_target": "{{choices.label.index(answerKey)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "{{choices.text}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Question: {{question}}\nAnswer:",
+        "doc_to_choice": "{{choices.text}}",
+        "doc_to_target": "{{choices.label.index(answerKey)}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/arc/arc_easy.yaml"
+      }
+    },
+    "english_copa": {
+      "task": "english_copa",
+      "dataset_path": "aps/super_glue",
+      "dataset_name": "copa",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "validation",
+      "process_docs": "def process_copa_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    \"\"\"Normalize SuperGLUE COPA options and labels for multiple-choice scoring.\"\"\"\n\n    def process_doc(doc: dict[str, Any]) -> dict[str, Any]:\n        label = int(doc['label'])\n        if label not in (0, 1):\n            raise ValueError(f'Unsupported COPA label: {label}')\n        return {\n            **doc,\n            'choices': [clean_option(doc['choice1']), clean_option(doc['choice2'])],\n            'gold': label,\n        }\n\n    return dataset.map(process_doc)\n",
+      "doc_to_text": "def copa_doc_to_text(doc: dict[str, Any]) -> str:\n    \"\"\"Build the COPA cause/effect prompt used by the English benchmark.\"\"\"\n    connector = {'cause': 'because', 'effect': 'therefore'}.get(doc['question'])\n    if connector is None:\n        raise ValueError(f'Unsupported COPA question type: {doc[\"question\"]!r}')\n    premise = str(doc['premise']).strip()\n    if premise.endswith('.'):\n        premise = premise[:-1]\n    return f'{premise} {connector}'\n",
+      "doc_to_target": "gold",
+      "unsafe_code": false,
+      "doc_to_choice": "choices",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": "<function process_copa_docs at 0x7c7dfd172200>",
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function copa_doc_to_text at 0x7c7dfd170540>",
+        "doc_to_choice": "choices",
+        "doc_to_target": "gold",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/english_copa.yaml"
+      }
+    },
+    "english_wnli": {
+      "task": "english_wnli",
+      "dataset_path": "nyu-mll/glue",
+      "dataset_name": "wnli",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "validation",
+      "fewshot_split": "train",
+      "doc_to_text": "{{sentence1.strip()}} Does this imply that {{sentence2.strip()}}? Answer:",
+      "doc_to_target": "label",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "yes",
+        "no"
+      ],
+      "process_results": "def process_wnli_results(doc: dict[str, Any], results: list[tuple[float, bool]]) -> dict[str, float]:\n    \"\"\"Score GLUE WNLI with raw accuracy and avoid unused normalized accuracy.\"\"\"\n    label = int(doc['label'])\n    if len(results) != 2 or label not in (0, 1):\n        raise ValueError(\n            f\"Expected two WNLI choices and a binary label; got \"\n            f\"{len(results)} scores and label {label}.\"\n        )\n    prediction = max(range(2), key=lambda index: results[index][0])\n    return {'acc': float(prediction == label)}\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{{sentence1.strip()}} Does this imply that {{sentence2.strip()}}? Answer:",
+        "doc_to_choice": [
+          "yes",
+          "no"
+        ],
+        "doc_to_target": "label",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 5,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "evaluation/lm_eval_tasks/english_wnli.yaml"
+      }
+    },
+    "global_piqa_nonparallel_cloze_eng_latn": {
+      "task": "global_piqa_nonparallel_cloze_eng_latn",
+      "dataset_path": "mrlbenchmarks/global-piqa-nonparallel",
+      "dataset_name": "eng_latn",
+      "test_split": "test",
+      "doc_to_text": "prompt",
+      "doc_to_target": "label",
+      "unsafe_code": false,
+      "doc_to_choice": "{{[solution0, solution1]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "prompt",
+        "doc_to_choice": "{{[solution0, solution1]}}",
+        "doc_to_target": "label",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/global_piqa/nonparallel_cloze/eng_latn.yaml"
+      }
+    },
+    "gpqa_main_n_shot": {
+      "task": "gpqa_main_n_shot",
+      "dataset_path": "Idavidrein/gpqa",
+      "dataset_name": "gpqa_main",
+      "training_split": "train",
+      "validation_split": "train",
+      "fewshot_split": "train",
+      "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        choices = [\n            preprocess(doc[\"Incorrect Answer 1\"]),\n            preprocess(doc[\"Incorrect Answer 2\"]),\n            preprocess(doc[\"Incorrect Answer 3\"]),\n            preprocess(doc[\"Correct Answer\"]),\n        ]\n\n        rng.shuffle(choices)\n        correct_answer_index = choices.index(preprocess(doc[\"Correct Answer\"]))\n\n        out_doc = {\n            \"choice1\": choices[0],\n            \"choice2\": choices[1],\n            \"choice3\": choices[2],\n            \"choice4\": choices[3],\n            \"answer\": f\"({chr(65 + correct_answer_index)})\",\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+      "doc_to_text": "Question: {{Question}}\nChoices:\n(A) {{choice1}}\n(B) {{choice2}}\n(C) {{choice3}}\n(D) {{choice4}}\nAnswer:",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "description": "Here are some example questions from experts. Answer the final question yourself, following the format of the previous questions exactly.\n",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": "<function process_docs at 0x7c7a6a732f20>",
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Question: {{Question}}\nChoices:\n(A) {{choice1}}\n(B) {{choice2}}\n(C) {{choice3}}\n(D) {{choice4}}\nAnswer:",
+        "doc_to_choice": [
+          "(A)",
+          "(B)",
+          "(C)",
+          "(D)"
+        ],
+        "doc_to_target": "answer",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 5,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 2.2,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/gpqa/n_shot/gpqa_main_n_shot.yaml"
+      }
+    },
+    "hellaswag": {
+      "task": "hellaswag",
+      "dataset_path": "Rowan/hellaswag",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "validation",
+      "fewshot_split": "train",
+      "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+      "doc_to_text": "{{query}}",
+      "doc_to_target": "{{label}}",
+      "unsafe_code": false,
+      "doc_to_choice": "choices",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": "<function process_docs at 0x7c7a716cf100>",
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{{query}}",
+        "doc_to_choice": "choices",
+        "doc_to_target": "{{label}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 10,
+      "metric_list": [
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/hellaswag/hellaswag.yaml"
+      }
+    },
+    "truthfulqa-multi_mc1_en": {
+      "task": "truthfulqa-multi_mc1_en",
+      "dataset_path": "HiTZ/truthfulqa-multi",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "validation",
+      "fewshot_split": "train",
+      "doc_to_text": "{{'Q: ' + question + '\nA:'}}",
+      "doc_to_target": 0,
+      "unsafe_code": false,
+      "doc_to_choice": "{{mc1_targets.choices}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "first_n",
+        "split": "train",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{{'Q: ' + question + '\nA:'}}",
+        "doc_to_choice": "{{mc1_targets.choices}}",
+        "doc_to_target": 0,
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 6,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "question",
+      "metadata": {
+        "version": 2.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/truthfulqa-multi/truthfulqa-multi_mc1_en.yaml"
+      }
+    },
+    "xstorycloze_en": {
+      "task": "xstorycloze_en",
+      "dataset_path": "juletxara/xstory_cloze",
+      "dataset_name": "en",
+      "training_split": "train",
+      "validation_split": "eval",
+      "fewshot_split": "train",
+      "doc_to_text": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "doc_to_target": "{{answer_right_ending-1}}",
+      "unsafe_code": false,
+      "doc_to_choice": "{{[sentence_quiz1, sentence_quiz2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+        "doc_to_choice": "{{[sentence_quiz1, sentence_quiz2]}}",
+        "doc_to_target": "{{answer_right_ending-1}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 5,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{[input_sentence_1, input_sentence_2, input_sentence_3, input_sentence_4]|join(' ')}}",
+      "metadata": {
+        "version": 1.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/xstorycloze/default_en.yaml"
+      }
+    },
+    "mgsm_direct_en": {
+      "task": "mgsm_direct_en",
+      "dataset_path": "juletxara/mgsm",
+      "dataset_name": "en",
+      "training_split": "train",
+      "test_split": "test",
+      "fewshot_split": "train",
+      "doc_to_text": "{% if answer is not none %}{{question+\"\\nAnswer:\"}}{% else %}{{\"Question: \"+question+\"\\nAnswer:\"}}{% endif %}",
+      "doc_to_target": "{{answer_number|string}}",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": "",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": "train",
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "{% if answer is not none %}{{question+\"\\nAnswer:\"}}{% else %}{{\"Question: \"+question+\"\\nAnswer:\"}}{% endif %}",
+        "doc_to_choice": null,
+        "doc_to_target": "{{answer_number|string}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": ""
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "do_sample": false,
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ]
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "remove_whitespace",
+          "filter": [
+            {
+              "function": "remove_whitespace"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ],
+          "name": "flexible-extract"
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 4.0,
+        "config_source": "/disk/.pyenv/versions/3.12.7/envs/guarania-models/src/lm-eval/lm_eval/tasks/mgsm/direct/mgsm_direct_en.yaml"
+      }
+    }
+  },
+  "versions": {
+    "arc_challenge": 1.0,
+    "arc_easy": 1.0,
+    "english_copa": 1.0,
+    "english_wnli": 1.0,
+    "global_piqa_nonparallel_cloze_eng_latn": 1.0,
+    "gpqa_main_n_shot": 2.2,
+    "hellaswag": 1.0,
+    "truthfulqa-multi_mc1_en": 2.0,
+    "xstorycloze_en": 1.0,
+    "mgsm_direct_en": 4.0
+  },
+  "n-shot": {
+    "arc_challenge": 25,
+    "arc_easy": 0,
+    "english_copa": 0,
+    "english_wnli": 5,
+    "global_piqa_nonparallel_cloze_eng_latn": 0,
+    "gpqa_main_n_shot": 5,
+    "hellaswag": 10,
+    "truthfulqa-multi_mc1_en": 6,
+    "xstorycloze_en": 5,
+    "mgsm_direct_en": 0
+  },
+  "higher_is_better": {
+    "arc_challenge": {
+      "acc_norm": true
+    },
+    "arc_easy": {
+      "acc_norm": true
+    },
+    "english_copa": {
+      "acc": true
+    },
+    "english_wnli": {
+      "acc": true
+    },
+    "global_piqa_nonparallel_cloze_eng_latn": {
+      "acc_norm": true
+    },
+    "gpqa_main_n_shot": {
+      "acc": true
+    },
+    "hellaswag": {
+      "acc_norm": true
+    },
+    "truthfulqa-multi_mc1_en": {
+      "acc": true
+    },
+    "xstorycloze_en": {
+      "acc": true
+    },
+    "mgsm_direct_en": {
+      "exact_match": true
+    }
+  },
+  "n-samples": {
+    "arc_easy": {
+      "original": 570,
+      "effective": 570
+    },
+    "arc_challenge": {
+      "original": 299,
+      "effective": 299
+    },
+    "global_piqa_nonparallel_cloze_eng_latn": {
+      "original": 100,
+      "effective": 100
+    },
+    "hellaswag": {
+      "original": 10042,
+      "effective": 10042
+    },
+    "xstorycloze_en": {
+      "original": 1511,
+      "effective": 1511
+    },
+    "gpqa_main_n_shot": {
+      "original": 448,
+      "effective": 448
+    },
+    "truthfulqa-multi_mc1_en": {
+      "original": 817,
+      "effective": 817
+    },
+    "english_wnli": {
+      "original": 71,
+      "effective": 71
+    },
+    "english_copa": {
+      "original": 100,
+      "effective": 100
+    },
+    "mgsm_direct_en": {
+      "original": 250,
+      "effective": 250
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": {
+      "pretrained": "outputs/train/gemma4_4b/experiments/full/C8_kuatia_no_synthetic_es10_en10/gemma4_4b_full_C8_kuatia_no_synthetic_es10_en10",
+      "dtype": "bfloat16",
+      "trust_remote_code": false,
+      "max_length": 24000,
+      "tokenizer": "google/gemma-4-E4B"
+    },
+    "model_num_parameters": 7941100832,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "",
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 20260721,
+    "numpy_seed": 20260721,
+    "torch_seed": 20260721,
+    "fewshot_seed": 20260721
+  },
+  "git_hash": "74935e3",
+  "date": "2026-10-16T08:37:03.592409+00:00",
+  "pretty_env_info": "PyTorch version: 2.13.0+cu126\nIs debug build: False\nCUDA used to build PyTorch: 12.6\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.3 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.12.7 (main, Mar  6 2026, 20:03:49) [GCC 13.3.0] (64-bit runtime)\nPython platform: Linux-7.0.0-1017-azure-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: 12.6.85\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA H100 NVL\nNvidia driver version: 580.178.04\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  40\nOn-line CPU(s) list:                     0-39\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9V84 96-Core Processor\nCPU family:                              25\nModel:                                   17\nThread(s) per core:                      1\nCore(s) per socket:                      40\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                4800.08\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves user_shstk avx512_bf16 clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm\nVirtualization:                          AMD-V\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               1.3 MiB (40 instances)\nL1i cache:                               1.3 MiB (40 instances)\nL2 cache:                                40 MiB (40 instances)\nL3 cache:                                160 MiB (5 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-39\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Vulnerable: No microcode\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.1\n[pip3] nvidia-cublas==13.1.1.3\n[pip3] nvidia-cublas-cu12==12.6.4.1\n[pip3] nvidia-cuda-cupti==13.0.85\n[pip3] nvidia-cuda-cupti-cu12==12.6.80\n[pip3] nvidia-cuda-nvrtc==13.0.88\n[pip3] nvidia-cuda-nvrtc-cu12==12.6.85\n[pip3] nvidia-cuda-runtime==13.0.96\n[pip3] nvidia-cuda-runtime-cu12==12.6.77\n[pip3] nvidia-cudnn-cu12==9.10.2.21\n[pip3] nvidia-cudnn-cu13==9.20.0.48\n[pip3] nvidia-cufft==12.0.0.61\n[pip3] nvidia-cufft-cu12==11.3.0.4\n[pip3] nvidia-curand==10.4.0.35\n[pip3] nvidia-curand-cu12==10.3.7.77\n[pip3] nvidia-cusolver==12.0.4.66\n[pip3] nvidia-cusolver-cu12==11.7.1.2\n[pip3] nvidia-cusparse==12.6.3.3\n[pip3] nvidia-cusparse-cu12==12.5.4.2\n[pip3] nvidia-cusparselt-cu12==0.7.1\n[pip3] nvidia-cusparselt-cu13==0.8.1\n[pip3] nvidia-nccl-cu12==2.29.3\n[pip3] nvidia-nccl-cu13==2.29.7\n[pip3] nvidia-nvjitlink==13.3.33\n[pip3] nvidia-nvjitlink-cu12==12.6.85\n[pip3] nvidia-nvtx==13.0.85\n[pip3] nvidia-nvtx-cu12==12.6.77\n[pip3] torch==2.13.0+cu126\n[pip3] torchaudio==2.11.0+cu126\n[pip3] torchdata==0.11.0\n[pip3] torchvision==0.28.0+cu126\n[pip3] triton==3.7.1\n[conda] Could not collect",
+  "transformers_version": "5.8.0",
+  "lm_eval_version": "0.4.13.dev0",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<pad>",
+    "0"
+  ],
+  "tokenizer_eos_token": [
+    "<eos>",
+    "1"
+  ],
+  "tokenizer_bos_token": [
+    "<bos>",
+    "2"
+  ],
+  "eot_token_id": 1,
+  "max_length": 24000,
+  "guarania_evaluation": {
+    "status": "complete",
+    "executed_tasks": [
+      "mgsm_direct_en"
+    ],
+    "skipped_tasks": [],
+    "task_runs": {
+      "mgsm_direct_en": {
+        "status": "complete",
+        "completed_at": "2026-10-16T08:37:03.592409+00:00",
+        "last_attempt_at": "2026-10-16T08:37:03.592409+00:00"
+      }
+    }
+  },
+  "groups": {}
+}
