@@ -1,0 +1,26 @@
+task: guarani_flores_plus_spa_to_grn
+dataset_path: openlanguagedata/flores_plus
+dataset_name: gug_Latn
+test_split: dev
+fewshot_split: devtest
+output_type: generate_until
+process_docs: !function utils.process_flores_plus_spa_to_grn
+target_delimiter: ''
+doc_to_text: "Traduce la siguiente oración en español al guaraní.\nEspañol: {{sentence_spa_Latn}}\nGuaraní:"
+doc_to_target: "{{sentence_gug_Latn}}"
+generation_kwargs:
+  until:
+    - "\n"
+    - "</s>"
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 256
+metric_list:
+  - metric: bleu
+    aggregation: bleu
+    higher_is_better: true
+  - metric: !function utils.chrf_plus_plus
+    aggregation: !function utils.aggregate_chrf_plus_plus
+    higher_is_better: true
+metadata:
+  version: 1.0
