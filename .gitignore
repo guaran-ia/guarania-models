@@ -221,3 +221,5 @@ __marimo__/
 
 *.tar
 *.tar.gz
+
+.DS_Store
