@@ -1,0 +1,101 @@
+Metric,base,CI base,C7,CI C7
+TRANSLATION TO GN,,,
+FLORES+ EN->GN BLEU,0.613,"[0.478, 0.748]",5.430,"[4.837, 6.023]"
+Gain FLORES+ EN->GN BLEU,--,,785.81%,
+FLORES+ EN->GN chrF++,7.930,,27.214,
+Gain FLORES+ EN->GN chrF++,--,,243.18%,
+FLORES+ ES->GN BLEU,0.530,"[0.389, 0.671]",4.848,"[4.264, 5.432]"
+Gain FLORES+ ES->GN BLEU,--,,814.72%,
+FLORES+ ES->GN chrF++,8.136,,27.536,
+Gain FLORES+ ES->GN chrF++,--,,238.45%,
+
+TRANSLATION FROM GN,,,
+FLORES+ GN->ES BLEU,6.383,"[5.723, 7.043]",11.617,"[10.939, 12.295]"
+Gain FLORES+ GN->ES BLEU,--,,82.00%,
+FLORES+ GN->ES chrF++,25.448,,34.452,
+Gain FLORES+ GN->ES chrF++,--,,35.38%,
+FLORES+ GN->EN BLEU,6.542,"[5.674, 7.410]",16.751,"[15.834, 17.668]"
+Gain FLORES+ GN->EN BLEU,--,,156.05%,
+FLORES+ GN->EN chrF++,27.053,,39.619,
+Gain FLORES+ GN->EN chrF++,--,,46.45%,
+
+GUARANI BENCHMARKS (6),,,
+Belebele Accuracy,0.341,"[0.310, 0.372]",0.433,"[0.401, 0.465]"
+Gain Belebele Accuracy,--,,26.98%,
+Global MMLU Lite Accuracy,0.360,"[0.313, 0.407]",0.443,"[0.394, 0.492]"
+Gain Global MMLU Lite Accuracy,--,,23.06%,
+MGSM Exact Match,0.049,"[0.013, 0.085]",0.056,"[0.018, 0.094]"
+Gain MGSM Exact Match,--,,14.29%,
+MultiWikiQA F1,0.169,"[0.160, 0.178]",0.337,"[0.326, 0.348]"
+Gain MultiWikiQA F1,--,,99.41%,
+WNLI Accuracy,0.408,"[0.269, 0.547]",0.429,"[0.289, 0.569]"
+Gain WNLI Accuracy,--,,5.15%,
+CoreGuapa Bits per byte Perplexity,1.528,,1.103,
+Gain CoreGuapa Bits per byte Perplexity,--,,27.81%,
+CoreGuapa Byte Perplexity,2.883,,2.148,
+Gain CoreGuapa Byte Perplexity,--,,25.49%,
+CoreGuapa Word Perplexity,6273.233,,552.900,
+Gain CoreGuapa Word Perplexity,--,,91.19%,
+Average,0.224,,0.332,
+Average gain,--,,48.21%,
+
+SPANISH BENCHMARKS (13),,,
+ARC Challenge Normalized Accuracy,0.719,"[0.668, 0.770]",0.696,"[0.644, 0.748]"
+Gain ARC Challenge Normalized Accuracy,--,,-3.20%,
+ARC Easy Normalized Accuracy,0.819,"[0.787, 0.851]",0.821,"[0.790, 0.852]"
+Gain ARC Easy Normalized Accuracy,--,,0.24%,
+Belebele Accuracy,0.704,"[0.674, 0.734]",0.673,"[0.642, 0.704]"
+Gain Belebele Accuracy,--,,-4.40%,
+COPA Accuracy,0.770,"[0.687, 0.853]",0.760,"[0.676, 0.844]"
+Gain COPA Accuracy,--,,-1.30%,
+Global MMLU Lite Accuracy,0.627,"[0.580, 0.674]",0.598,"[0.550, 0.646]"
+Gain Global MMLU Lite Accuracy,--,,-4.63%,
+GPQA Main Accuracy,0.292,"[0.250, 0.334]",0.270,"[0.229, 0.311]"
+Gain GPQA Main Accuracy,--,,-7.53%,
+HellaSwag Normalized Accuracy,0.672,"[0.662, 0.682]",0.695,"[0.686, 0.704]"
+Gain HellaSwag Normalized Accuracy,--,,3.42%,
+MGSM Exact Match,0.108,"[0.069, 0.147]",0.120,"[0.080, 0.160]"
+Gain MGSM Exact Match,--,,11.11%,
+MultiWikiQA F1,0.761,"[0.751, 0.771]",0.721,"[0.711, 0.731]"
+Gain MultiWikiQA F1,--,,-5.26%,
+PIQA Normalized Accuracy,0.790,"[0.710, 0.870]",0.810,"[0.733, 0.887]"
+Gain PIQA Normalized Accuracy,--,,2.53%,
+TruthfulQA MC1 Accuracy,0.321,"[0.288, 0.354]",0.297,"[0.265, 0.329]"
+Gain TruthfulQA MC1 Accuracy,--,,-7.48%,
+WNLI Accuracy,0.493,"[0.376, 0.610]",0.423,"[0.307, 0.539]"
+Gain WNLI Accuracy,--,,-14.20%,
+XStoryCloze Accuracy,0.725,"[0.702, 0.748]",0.733,"[0.711, 0.755]"
+Gain XStoryCloze Accuracy,--,,1.10%,
+Average,0.543,,0.549,
+Average gain,--,,1.10%,
+
+ENGLISH BENCHMARKS (13),,,
+ARC Challenge Normalized Accuracy,0.562,"[0.506, 0.618]",0.552,"[0.496, 0.608]"
+Gain ARC Challenge Normalized Accuracy,--,,-1.78%,
+ARC Easy Normalized Accuracy,0.802,"[0.769, 0.835]",0.805,"[0.772, 0.838]"
+Gain ARC Easy Normalized Accuracy,--,,0.37%,
+Belebele Accuracy,0.768,"[0.740, 0.796]",0.736,"[0.707, 0.765]"
+Gain Belebele Accuracy,--,,-4.17%,
+COPA Accuracy,0.880,"[0.816, 0.944]",0.900,"[0.841, 0.959]"
+Gain COPA Accuracy,--,,2.27%,
+Global MMLU Lite Accuracy,0.680,"[0.634, 0.726]",0.657,"[0.610, 0.704]"
+Gain Global MMLU Lite Accuracy,--,,-3.38%,
+GPQA Main Accuracy,0.335,"[0.291, 0.379]",0.337,"[0.293, 0.381]"
+Gain GPQA Main Accuracy,--,,0.60%,
+HellaSwag Normalized Accuracy,0.778,"[0.770, 0.786]",0.803,"[0.795, 0.811]"
+Gain HellaSwag Normalized Accuracy,--,,3.21%,
+MGSM Exact Match,0.144,"[0.100, 0.188]",0.132,"[0.090, 0.174]"
+Gain MGSM Exact Match,--,,-8.33%,
+MultiWikiQA F1,0.784,"[0.774, 0.794]",0.719,"[0.709, 0.729]"
+Gain MultiWikiQA F1,--,,-8.29%,
+PIQA Normalized Accuracy,0.780,"[0.698, 0.862]",0.780,"[0.698, 0.862]"
+Gain PIQA Normalized Accuracy,--,,0.00%,
+Truthfulqa-Multi Mc1 Accuracy,0.244,"[0.215, 0.273]",0.220,"[0.192, 0.248]"
+Gain Truthfulqa-Multi Mc1 Accuracy,--,,-9.84%,
+WNLI Accuracy,0.479,"[0.362, 0.596]",0.408,"[0.293, 0.523]"
+Gain WNLI Accuracy,--,,-14.82%,
+XStoryCloze Accuracy,0.803,"[0.783, 0.823]",0.811,"[0.791, 0.831]"
+Gain XStoryCloze Accuracy,--,,1.00%,
+Average,0.559,,0.569,
+Average gain,--,,1.79%,
+
