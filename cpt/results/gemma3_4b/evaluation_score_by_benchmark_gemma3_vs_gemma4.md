@@ -14,7 +14,7 @@
 | Average | 22.37 | 33.18 | +10.81 | 31.66 | 37.42 | +5.76 | -- | -- |
 
 ## Reference
-* `GuaranIA-G34B` is based on `Gemma-3 4B`
+* `GuaranIA-G34B` is based on `Gemma-3 4B-PT`
 * `GuaranIA-G4E4B` is based on `Gemma-4 E4B`
 * `C7` is a dataset configuration that includes the guarani corpus `Kuatia` + 10% `Spanish FineWeb-Edu` + 10% `FineWeb-Edu` (52,415,521 tokens)
-* `BYOL-GUG` is based on `Gemma-3 4B`
+* `BYOL-GUG` is based on `Gemma-3 4B-PT`
