@@ -1,10 +1,10 @@
 # Gemma3 4B (Full CPT)
 
-| Perplexity metric | base | C7 |
-| --- | --- | --- |
-| word perplexity | 6273.23 | **552.90** |
-| byte perplexity | 2.88 | **2.15** |
-| bits per byte | 1.53 | **1.10** |
+| Perplexity metric | base | C1 | C2 | C7 |
+| --- | --- | --- | --- | --- |
+| word perplexity | 6273.23 | 555.70 | 619.83 | **552.90** |
+| byte perplexity | 2.88 | 2.15 | 2.18 | **2.15** |
+| bits per byte | 1.53 | 1.10 | 1.12 | **1.10** |
 
 ## Variant reference
 * C1: Kuatia (43,677,319 tokens)

@@ -5,6 +5,8 @@
 | Model | Variant | Training Method | Training Data | LoRA Rank |
 | --- | --- | --- | --- | --- |
 | Gemma3 4B | base | Base |  |  |
+| Gemma3 4B | C1 | Full CPT | Kuatia |  |
+| Gemma3 4B | C2 | Full CPT | Kuatia without synthetic |  |
 | Gemma3 4B | C7 | Full CPT | Kuatia + 10% Spanish FineWeb-Edu + 10% FineWeb-Edu |  |
 
 ## Benchmarks
