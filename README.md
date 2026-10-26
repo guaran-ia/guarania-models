@@ -141,8 +141,10 @@ comparison.
 fine-tuning. It has the best perplexity results, leads translation from Guarani, scores
 highest on Guarani `Belebele`, and comes closest to the base on Guarani `Global MMLU
 Lite` and `MGSM`. It also retains multilingual performance well: its English average
-ranks second among CPT variants, and its Spanish average is among the strongest. While
-no single configuration leads every measure, **C7 offers the strongest balance across
-the Guarani capabilities and multilingual retention.**
+ranks second among CPT variants, and its Spanish average is among the strongest. 
+
+>[!Note] 
+> While no single configuration leads every evaluation, the dataset configuration 
+> C7 shows to offer the strongest balance across the Guarani capabilities and multilingual retention.
 
 
