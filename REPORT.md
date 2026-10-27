@@ -4,7 +4,7 @@ This is a living document that describes the approach followed to develop the LL
 [GuaranIA](https://www.guarania.org). The building process follows the 
 [BYOL](https://arxiv.org/abs/2601.10804) methodology, which is implemented through 
 the in-house framework [Guaratune](https://github.com/guaran-ia/guaratune).
-**The main idea is to adapt a multilingual open-source multilingual base model (e.g., Goolge Gemma-4) 
+**The main idea is to adapt a multilingual open-source base model (e.g., Goolge Gemma-4) 
 to Guarani while aiming to retain its existing capabilities.**
 
 ## BYOL methodology in a nutshell
