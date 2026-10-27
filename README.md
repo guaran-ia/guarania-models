@@ -108,6 +108,7 @@ that includes `Kuatia` both real and synthetic plus English and Spanish FineWeb-
 | word perplexity | 3058.27 | 469.16 | 533.09 | 476.78 | 542.04 | 485.26 | 553.65 | **463.10** | 521.08 |
 | byte perplexity | 2.64 | 2.11 | 2.14 | 2.11 | 2.14 | 2.11 | 2.15 | **2.10** | 2.13 |
 | bits per byte | 1.40 | 1.07 | 1.10 | 1.08 | 1.10 | 1.08 | 1.10 | **1.07** | 1.09 |
+
 *Note: In bold the lowest value per row*
 
 The other `CPT` variants are close on `byte perplexity` (`2.11`–`2.15`) and 
@@ -239,7 +240,7 @@ highest on Guarani `Belebele`, and comes closest to the base on Guarani `Global 
 Lite` and `MGSM`. It also retains multilingual performance well: its English average
 ranks second among CPT variants, and its Spanish average is among the strongest. 
 
->[!Important] C7, the top-performer data configuration
+> [!IMPORTANT] C7, the top-performer data configuration
 > While no single configuration leads every evaluation, the dataset configuration 
 > C7 shows to offer the strongest balance across the Guarani capabilities and multilingual retention.
 
