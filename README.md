@@ -240,7 +240,7 @@ highest on Guarani `Belebele`, and comes closest to the base on Guarani `Global 
 Lite` and `MGSM`. It also retains multilingual performance well: its English average
 ranks second among CPT variants, and its Spanish average is among the strongest. 
 
-> [!IMPORTANT] C7, the top-performer data configuration
+> [!IMPORTANT]
 > While no single configuration leads every evaluation, the dataset configuration 
 > C7 shows to offer the strongest balance across the Guarani capabilities and multilingual retention.
 
