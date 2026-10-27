@@ -37,7 +37,7 @@ combined into eigth different data configurations for `full CPT` (i.e., all mode
 * `C7`: Kuatia + 10% Spanish FineWeb-Edu + 10% FineWeb-Edu (`52,415,521` tokens)
 * `C8`: Kuatia without synthetic documents + 10% Spanish FineWeb-Edu + 10% FineWeb-Edu (`36,732,887` tokens)
 
-> [!Note] Corpus definition and CPT configuration
+> [!Note]
 > The corpus definitions and source revisions are recorded in [`cpt/configs/data/gemma4_cpt.yaml`](cpt/configs/data/gemma4_cpt.yaml), while the `full CPT` configuration and hyperparameters are defined in [`cpt/configs/train/gemma4-4_cpt_matrix.yaml`](cpt/configs/train/gemma4-4_cpt_matrix.yaml).
 
 
@@ -86,10 +86,10 @@ and [suite](cpt/evaluation/lm_eval_tasks) definitions for more details.
 | [XStoryCloze](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/es/eval) | ES | Common sense & inference | Multiple-choice QA | Accuracy | 1,511 | 5 | eval |
 | [XStoryCloze](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/en/eval) | EN | Common sense & inference | Multiple-choice QA | Accuracy | 1,511 | 5 | eval |
 
-> [!Important] Perplexity for language modeling
+> [!Important]
 > Complementing the mentioned benchkmarks, we assess the language modeling capacity of the adapted model through `perplexity` on [COREGUAPA](https://corpus.spl.gov.py), a high-quality proprietary corpus curated by the [Paraguayan Secretariat of Linguistic Policy](https://spl.gov.py).
 
->[!Note] Human-translated benchmarks
+>[!Note]
 > A Guarani version of `Global MMLU Lite`, `MGSM`, and `WLNI` were 
 > created by language experts and are available at the framework [Guaratune](https://github.com/guaran-ia/guaratune/tree/main/data/evaluation) repo.
 
