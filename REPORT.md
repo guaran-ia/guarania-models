@@ -52,8 +52,7 @@ and English benchmarks, including language understanding, reading comprenhension
 question answering, translation, and perplexity tasks.  The table below lists each benchmark, 
 its language (`GN` = Guarani, `ES` = Spanish, `EN` = English), the capability and task it 
 assesses, as well as the metric, number of evaluation instances, number of shots, 
-and score split. Check the evaluation [tasks](cpt/configs/evaluation/gemma4-4_eval_matrix.yaml) 
-and [suite](cpt/evaluation/lm_eval_tasks) definitions for more details.
+and score split.
 
 | Benchmark | Language | Capacity | Task | Metric | Instances | Shots | Score Split |
 | --- | --- | --- | --- | --- | --- | --- | --- |
