@@ -1,4 +1,4 @@
-# GuaranIA LLM Models
+# GuaranIA LLMs
 
 This repository contains technical artifacts used to develop and evaluate language models for [GuaranIA](https://www.guarania.org), a project focused on adapting multilingual models to Guarani. The development approach follows the [BYOL methodology](https://arxiv.org/abs/2601.10804) and uses the in-house [Guaratune framework](https://github.com/guaran-ia/guaratune).
 
