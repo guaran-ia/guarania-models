@@ -148,9 +148,7 @@ On the other tasks, gains are limited: **`C7` has the highest `Belebele` accurac
 `Global MMLU Lite` (`46.00`) and `MGSM` exact match (`9.86`), while all variants 
 also trail the base on `MultiWikiQA` F1 (`42.83`). However, **C7 comes close to the 
 base on the first two tasks**, with differences of only `0.50` points on 
-`Global MMLU Lite` and `0.71` points on `MGSM`. These results migth suggest that 
-the base model's existing Guarani capacity for these tasks limits what continued 
-training on the available corpus can improve.
+`Global MMLU Lite` and `0.71` points on `MGSM`. 
 
 | benchmark | base | C1 | Gain C1 | C2 | Gain C2 | C3 | Gain C3 | C4  | Gain C4 | C5  | Gain C5 | C6  | Gain C6 | C7  | Gain C7 | C8  | Gain C8 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -166,7 +164,82 @@ Considering its leading results on both translation directions from Guarani, str
 `Belebele` score, and near-base results on `Global MMLU Lite` and `MGSM`, **`C7` highlights 
 as the most promising variant for the Guarani capabilities emphasized here**, although 
 `C8` showed the highest displayed average across all Guarani tasks (`37.81` vs. `37.42` of `C7`). 
-So `C7` recommendation reflects the balance of capabilities described above rather than the aggregate average alone.
+So `C7` recommendation reflects the balance of capabilities described above rather 
+than the aggregate average alone.
+
+**Deep-dive into the guarani mixed performance**
+
+The adapted model's mixed performance on the Guarani benchmarks may have three 
+explanations. First, the base model's existing Guarani capabilities may limit the 
+gains CPT can deliver on these tasks. Second, the CPT data may not provide enough 
+additional information to substantially improve the model's task performance. Third,
+the size of the adapted model is too large compared with the volume of data, producing
+less promising gains.
+
+To further investigate the first two explainations, we run additional experiments 
+with a previous generation of the Gemma base model (`Gemma-3 4B`), which passes 
+through a `full CPT` process using the `C7` data configuration. The results of these 
+experiments can use to compare the performance of base models and also to look at 
+the performance gains. If the performance of the `Gemma-3` base is noticeable inferior 
+than the performance of the `Gemma-4` base and the gains of the adapted `Gemma-3` are 
+larger than the adapted `Gemma-4` we can confirm the superior capacity of the latter 
+to solve the guarani tasks. On the other hand, if the performance and gains are similar, 
+the CPT data do not add much more benefits to improve the model's performance. 
+
+The table below shows that `Gemma-4 E4B` starts from a higher Guarani average than
+`Gemma-3 4B` (`31.66` vs. `22.37`) and also reaches a higher average after `C7` CPT
+(`37.42` vs. `33.18`). However, the average gain is larger for `Gemma-3 4B` (`+10.81`
+vs. `+5.76`). This pattern is consistent with the idea that the stronger base model
+has less room to improve through CPT, while the lower-scoring base model has more
+headroom. Compared with `Gemma-4 E4B`, `Gemma-3 4B` gains more from CPT on almost 
+every tasks, except in `WNLI`. In the case of translation we see mixed results. 
+`Gemma-4 E4B` gains more on translation into Guarani, while `Gemma-3 4B` shows larger 
+gains for translation from Guarani. **From these results, it seems that, so far, what 
+might explain the mixed performance of the adapted `Gemma-4` is the superior capacity
+of its baseline, not the trained data content.**
+
+| Benchmark | Gemma-3-Base | Gemma-4-Base | Gemma-3-4B-C7 | Gain Gemma-3-C7 | Gemma-4-E4B-C7 | Gain Gemma-4-C7
+| --- | --- | --- | --- | --- | --- | --- |
+| Global MMLU Lite GN (acc) | 36.00 | 46.00 (+10 w.r.t. `Gemma-3`) | 44.25 | +8.25 | 45.50 | -0.50 |
+| MGSM GN (exact_match) | 4.93 | 9.86 (+4.93) | 5.63 | +0.70 | 9.15 | -0.71 |
+| WNLI GN (acc) | 40.82 | 44.90 (+4.08) | 42.86 | +2.04 | 48.98 | +4.08 |
+| Belebele GN (acc) | 34.11 | 52.22 (+18,11) | 43.33 | +9.22 | 55.56 | +3.34 |
+| MultiWikiQA GN (F1) | 16.93 | 42.83 (+25,90) | 33.74 | +16.81 | 36.32 | -6.51 |
+| FLORES+ EN->GN (chrF++) | 7.93 | 8.48 (+0,55) | 27.21 | +19.28 | 30.05 | +21.57 |
+| FLORES+ ES->GN (chrF++) | 8.14 | 9.30 (+1,16) | 27.54 | +19.40 | 29.60 | +20.30 |
+| FLORES+ GN->EN (chrF++) | 27.05 | 37.94 (+10,89) | 39.62 | +12.57 | 44.47 | +6.53 |
+| FLORES+ GN->ES (chrF++) | 25.45 | 33.40 (+7,95) |  34.45 | +9.00 | 37.11 | +3.71 |
+| Average | 22.37 | 31.66 (+9,29) | 33.18 | +10.81 | 37.42 | +5.76 |
+
+*Note: Gain columns show signed score-point differences from the corresponding base model.*
+
+To check the third possible explanation of the mixed performance, we conducted CPT 
+on a smaller variant of Gemma-4 (`Gemma-4 E2B`). Results are outlined in the table below.
+
+| Benchmark | Gemma-4-E2B-Base | Adapted Gemma-4-E2B | Gain E2B | Gemma-4-E4B-Base | Adapted Gemma-4-E4B | Gain E4B |
+| --- | --- | --- | --- | --- | --- | --- |
+| Global MMLU Lite GN (acc) | 36.25 | 41.00 | +4.75 | 46.00 | 45.50 | -0.50 |
+| MGSM GN (exact_match) | 2.11 | 1.41 | -0.70 | 9.86 | 9.15 | -0.71 |
+| WNLI GN (acc) | 38.78 | 51.02 | +12.24 | 44.90 | 48.98 | +4.08 |
+| Belebele GN (acc) | 34.56 | 37.22 | +2.66 | 52.22 | 55.56 | +3.34 |
+| MultiWikiQA GN (F1) | 23.36 | 30.77 | +7.41 | 42.83 | 36.32 | -6.51 |
+| FLORES+ EN->GN (chrF++) | 8.38 | 26.34 | +17.96 | 8.48 | 30.05 | +21.57 |
+| FLORES+ ES->GN (chrF++) | 9.01 | 26.72 | +17.71 | 9.30 | 29.60 | +20.30 |
+| FLORES+ GN->EN (chrF++) | 28.18 | 35.04 | +6.86 | 37.94 | 44.47 | +6.53 |
+| FLORES+ GN->ES (chrF++) | 26.61 | 31.85 | +5.24 | 33.40 | 37.11 | +3.71 |
+| Average | 23.03 | 31.26 | +8.23 | 31.66 | 37.42 | +5.76 |
+
+*Note: Gain columns show signed score-point differences from the corresponding base model.*
+
+The smaller `Gemma-4 E2B` gains more on average from `C7` than `Gemma-4 E4B` (`+8.23`
+vs. `+5.76` points). `E2B` also gains more on Guarani `Global MMLU Lite`, `WNLI`,
+`MultiWikiQA`, and translation from Guarani; `E4B` gains more on `Belebele` and
+translation into Guarani. Neither model improves on `MGSM`. This pattern is consistent
+with the `C7` corpus providing a better data-to-model-size balance for `E2B`, but it is not
+conclusive: `E4B` starts from a higher average and still finishes with the higher score
+(`37.42` vs. `31.26`), while the relative gains vary by task. The results support the
+model-size hypothesis as one possible explanation for the mixed performance, rather
+than showing that model size alone causes it.
 
 **Multilingual performance**
 
@@ -252,6 +325,6 @@ ranks second among CPT variants, and its Spanish average is among the strongest.
 #### Finding the CPT method
 
 With `C7` selected as the most promising data configuration, the next step is to 
-compare full CPT with LoRA. The comparison uses models trained on `C7`, with LoRA 
-ranks of `64`, `128`, `256`, and `512`.
+compare `full CPT` with `LoRA`. The comparison uses `Gemma-3 E4B` models trained 
+on `C7`, with LoRA ranks of `64`, `128`, `256`, and `512`.
 
