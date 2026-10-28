@@ -167,36 +167,25 @@ as the most promising variant for the Guarani capabilities emphasized here**, al
 So `C7` recommendation reflects the balance of capabilities described above rather 
 than the aggregate average alone.
 
-**Deep-dive into the guarani mixed performance**
+**Deep-dive into the Guarani mixed performance**
 
-The adapted model's mixed performance on the Guarani benchmarks may have three 
-explanations. First, the base model's existing Guarani capabilities may limit the 
-gains CPT can deliver on these tasks. Second, the CPT data may not provide enough 
-additional information to substantially improve the model's task performance. Third,
-the size of the adapted model is too large compared with the volume of data, producing
-less promising gains.
+The mixed results on Guarani may have several causes. The base model may already have
+some ability on particular tasks, leaving less room for CPT to improve them. The C7
+corpus may also lack the task-relevant information needed to improve some capabilities.
+Finally, the amount of CPT data may be small relative to the model’s size, limiting the
+gains from continued training. The comparisons below examine these possibilities; they
+are indicative rather than controlled tests of each cause.
 
-To further investigate the first two explainations, we run additional experiments 
-with a previous generation of the Gemma base model (`Gemma-3 4B`), which passes 
-through a `full CPT` process using the `C7` data configuration. The results of these 
-experiments can use to compare the performance of base models and also to look at 
-the performance gains. If the performance of the `Gemma-3` base is noticeable inferior 
-than the performance of the `Gemma-4` base and the gains of the adapted `Gemma-3` are 
-larger than the adapted `Gemma-4` we can confirm the superior capacity of the latter 
-to solve the guarani tasks. On the other hand, if the performance and gains are similar, 
-the CPT data do not add much more benefits to improve the model's performance. 
-
-The table below shows that `Gemma-4 E4B` starts from a higher Guarani average than
-`Gemma-3 4B` (`31.66` vs. `22.37`) and also reaches a higher average after `C7` CPT
-(`37.42` vs. `33.18`). However, the average gain is larger for `Gemma-3 4B` (`+10.81`
-vs. `+5.76`). This pattern is consistent with the idea that the stronger base model
-has less room to improve through CPT, while the lower-scoring base model has more
-headroom. Compared with `Gemma-4 E4B`, `Gemma-3 4B` gains more from CPT on almost 
-every tasks, except in `WNLI`. In the case of translation we see mixed results. 
-`Gemma-4 E4B` gains more on translation into Guarani, while `Gemma-3 4B` shows larger 
-gains for translation from Guarani. **From these results, it seems that, so far, what 
-might explain the mixed performance of the adapted `Gemma-4` is the superior capacity
-of its baseline, not the trained data content.**
+To compare the effect of the starting model, we ran full CPT with the same C7 data
+configuration on `Gemma-3 4B` and `Gemma-4 E4B`. The table shows that E4B starts with a
+higher Guarani average (`31.66` vs. `22.37`) and retains the higher average after CPT
+(`37.42` vs. `33.18`). However, the average gain is larger for Gemma 3 (`+10.81` vs.
+`+5.76`). Gemma 3 gains more on `Global MMLU Lite`, `MGSM`, `Belebele`, and
+`MultiWikiQA`, while Gemma 4 gains more on `WNLI`. Translation results also differ by
+direction: Gemma 4 gains more for translation into Guarani, whereas Gemma 3 gains more
+for translation from Guarani. This pattern is consistent with the stronger Gemma 4
+baseline having less headroom on several tasks, but it does not show that baseline
+capacity alone explains the mixed results or that the C7 data is unhelpful.
 
 | Benchmark | Gemma-3-Base | Gemma-4-Base | Gemma-3-4B-C7 | Gain Gemma-3-C7 | Gemma-4-E4B-C7 | Gain Gemma-4-C7
 | --- | --- | --- | --- | --- | --- | --- |
@@ -213,8 +202,8 @@ of its baseline, not the trained data content.**
 
 *Note: Gain columns show signed score-point differences from the corresponding base model.*
 
-To check the third possible explanation of the mixed performance, we conducted CPT 
-on a smaller variant of Gemma-4 (`Gemma-4 E2B`). Results are outlined in the table below.
+To examine whether model size relative to the data volume matters, we also ran full CPT
+with C7 on the smaller `Gemma-4 E2B`. The table compares its results with `Gemma-4 E4B`.
 
 | Benchmark | Gemma-4-E2B-Base | Adapted Gemma-4-E2B | Gain E2B | Gemma-4-E4B-Base | Adapted Gemma-4-E4B | Gain E4B |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -231,15 +220,15 @@ on a smaller variant of Gemma-4 (`Gemma-4 E2B`). Results are outlined in the tab
 
 *Note: Gain columns show signed score-point differences from the corresponding base model.*
 
-The smaller `Gemma-4 E2B` gains more on average from `C7` than `Gemma-4 E4B` (`+8.23`
-vs. `+5.76` points). `E2B` also gains more on Guarani `Global MMLU Lite`, `WNLI`,
-`MultiWikiQA`, and translation from Guarani; `E4B` gains more on `Belebele` and
-translation into Guarani. Neither model improves on `MGSM`. This pattern is consistent
-with the `C7` corpus providing a better data-to-model-size balance for `E2B`, but it is not
-conclusive: `E4B` starts from a higher average and still finishes with the higher score
-(`37.42` vs. `31.26`), while the relative gains vary by task. The results support the
-model-size hypothesis as one possible explanation for the mixed performance, rather
-than showing that model size alone causes it.
+E2B gains more on average from C7 than E4B (`+8.23` vs. `+5.76` points), and gains more
+on `Global MMLU Lite`, `WNLI`, `MultiWikiQA`, and translation from Guarani. E4B gains
+more on `Belebele` and translation into Guarani. Neither model improves on `MGSM`.
+These results are consistent with the C7 data volume being better matched to E2B’s
+smaller size, although E4B still has the higher post-CPT average (`37.42` vs. `31.26`).
+The task-level differences also show that model size does not determine the outcome on
+its own. Overall, the comparison supports data-to-model size as one possible factor in
+the mixed performance, while leaving room for baseline capabilities and task-specific
+data coverage to contribute as well.
 
 **Multilingual performance**
 
