@@ -56,40 +56,20 @@ and score split.
 
 | Benchmark | Language | Capacity | Task | Metric | Instances | Shots | Score Split |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [ARC Challenge](https://huggingface.co/datasets/BSC-LT/arc_es/viewer/ARC_Challenge_es) | ES | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 299 | 25 | validation |
-| [ARC Challenge](https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Challenge/validation) | EN | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 299 | 25 | validation |
-| [ARC Easy](https://huggingface.co/datasets/BSC-LT/arc_es/viewer/ARC_Easy_es) | ES | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 570 | 0 | validation |
-| [ARC Easy](https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Easy/validation) | EN | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 570 | 0 | validation |
-| [Belebele](https://huggingface.co/datasets/facebook/belebele/viewer/grn_Latn) | GN | Reading comprehension | Multiple-choice QA | Accuracy | 900 | 1 | test |
-| [Belebele](https://huggingface.co/datasets/facebook/belebele/viewer/spa_Latn) | ES | Reading comprehension | Multiple-choice QA | Accuracy | 900 | 1 | test |
-| [Belebele](https://huggingface.co/datasets/facebook/belebele/viewer/eng_Latn) | EN | Reading comprehension | Multiple-choice QA | Accuracy | 900 | 1 | test |
-| [COPA](https://huggingface.co/datasets/BSC-LT/COPA-es) | ES | Causal reasoning | Multiple-choice QA | Accuracy | 100 | 0 | validation |
-| [COPA](https://huggingface.co/datasets/aps/super_glue/viewer/copa/validation) | EN | Causal reasoning | Multiple-choice QA | Accuracy | 100 | 0 | validation |
-| [FLORES+](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/gug_Latn/dev) | GN | Translation | Generation | BLEU, chrF++ | 997 | 1 | dev |
-| [FLORES+](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/spa_Latn/dev) | ES | Translation | Generation | BLEU, chrF++ | 997 | 1 | dev |
-| [FLORES+](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/eng_Latn/dev) | EN | Translation | Generation | BLEU, chrF++ | 997 | 1 | dev |
-| [Global MMLU Lite](data/evaluation/global-mmlu-lite) | GN | General knowledge | Multiple-choice QA | Accuracy | 400 | 5 | test |
-| [Global MMLU Lite](https://huggingface.co/datasets/CohereLabs/Global-MMLU-Lite/viewer/es/test) | ES | General knowledge | Multiple-choice QA | Accuracy | 400 | 5 | test |
-| [Global MMLU Lite](https://huggingface.co/datasets/CohereLabs/Global-MMLU-Lite/viewer/en/test) | EN | General knowledge | Multiple-choice QA | Accuracy | 400 | 5 | test |
-| [Global PIQA](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel/viewer/spa_latn_spai) | ES | Common sense & inference | Multiple-choice QA | Normalized accuracy | 100 | 0 | test |
-| [Global PIQA](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel/viewer/eng_latn) | EN | Common sense & inference | Multiple-choice QA | Normalized accuracy | 100 | 0 | test |
-| [GPQA Main](https://huggingface.co/datasets/ellamind/gpqa-multilingual/viewer/spa) | ES | Specialized reasoning (biology, physics, chemistry) | Multiple-choice QA | Accuracy | 448 | 5 | train |
-| [GPQA Main](https://huggingface.co/datasets/Idavidrein/gpqa/viewer/gpqa_main) | EN | Specialized reasoning (biology, physics, chemistry) | Multiple-choice QA | Accuracy | 448 | 5 | train |
-| [HellaSwag](https://huggingface.co/datasets/alvarobartt/hellaswag-okapi-eval-es) | ES | Common sense & inference | Multiple-choice QA | Normalized accuracy | 9,374 | 10 | val |
-| [HellaSwag](https://huggingface.co/datasets/Rowan/hellaswag/viewer/default/validation) | EN | Common sense & inference | Multiple-choice QA | Normalized accuracy | 10,042 | 10 | validation |
-| [MGSM](data/evaluation/mgsm) | GN | Specialized reasoning (mathematics) | Generation | Exact match | 142 | 5 | test |
-| [MGSM](https://huggingface.co/datasets/juletxara/mgsm/viewer/es/test) | ES | Specialized reasoning (mathematics) | Generation | Exact match | 250 | 0 | test |
-| [MGSM](https://huggingface.co/datasets/juletxara/mgsm/viewer/en/test) | EN | Specialized reasoning (mathematics) | Generation | Exact match | 250 | 0 | test |
-| [MultiWikiQA](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/gn) | GN | Reading comprehension | Generation | Exact match, F1 | 5,003 | 2 | train |
-| [MultiWikiQA](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/es) | ES | Reading comprehension | Generation | Exact match, F1 | 5,001 | 2 | train |
-| [MultiWikiQA](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/en) | EN | Reading comprehension | Generation | Exact match, F1 | 4,999 | 2 | train |
-| [TruthfulQA MC1](https://huggingface.co/datasets/HiTZ/truthfulqa-multi/viewer/es/validation) | ES | Truthfulness and factuality | Multiple-choice QA | Accuracy | 789 | 6 | val |
-| [TruthfulQA MC1](https://huggingface.co/datasets/HiTZ/truthfulqa-multi/viewer/en/validation) | EN | Truthfulness and factuality | Multiple-choice QA | Accuracy | 817 | 6 | validation |
-| [WNLI](data/evaluation/wnli) | GN | Common sense & inference | Multiple-choice QA | Accuracy | 49 | 5 | dev |
-| [WNLI](https://huggingface.co/datasets/PlanTL-GOB-ES/wnli-es/blob/main/wnli-test-shuffled-es.csv) | ES | Common sense & inference | Multiple-choice QA | Accuracy | 71 | 5 | validation |
-| [WNLI](https://huggingface.co/datasets/nyu-mll/glue/viewer/wnli/test) | EN | Common sense & inference | Multiple-choice QA | Accuracy | 71 | 5 | validation |
-| [XStoryCloze](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/es/eval) | ES | Common sense & inference | Multiple-choice QA | Accuracy | 1,511 | 5 | eval |
-| [XStoryCloze](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/en/eval) | EN | Common sense & inference | Multiple-choice QA | Accuracy | 1,511 | 5 | eval |
+| ARC Challenge | [ES](https://huggingface.co/datasets/BSC-LT/arc_es/viewer/ARC_Challenge_es), [EN](https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Challenge/validation) | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 299 | 25 | validation |
+| ARC Easy | [ES](https://huggingface.co/datasets/BSC-LT/arc_es/viewer/ARC_Easy_es), [EN](https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Easy/validation) | Specialized reasoning (science) | Multiple-choice QA | Normalized accuracy | 570 | 0 | validation |
+| Belebele | [GN](https://huggingface.co/datasets/facebook/belebele/viewer/grn_Latn), [ES](https://huggingface.co/datasets/facebook/belebele/viewer/spa_Latn), [EN](https://huggingface.co/datasets/facebook/belebele/viewer/eng_Latn) | Reading comprehension | Multiple-choice QA | Accuracy | 900 | 1 | test |
+| COPA | [ES](https://huggingface.co/datasets/BSC-LT/COPA-es), [EN](https://huggingface.co/datasets/aps/super_glue/viewer/copa/validation) | Causal reasoning | Multiple-choice QA | Accuracy | 100 | 0 | validation |
+| FLORES+ | [GN](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/gug_Latn/dev), [ES](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/spa_Latn/dev), [EN](https://huggingface.co/datasets/openlanguagedata/flores_plus/viewer/eng_Latn/dev) | Translation | Generation | BLEU, chrF++ | 997 | 1 | dev |
+| Global MMLU Lite | [GN]((data/evaluation/global-mmlu-lite)), [ES](https://huggingface.co/datasets/CohereLabs/Global-MMLU-Lite/viewer/es/test), [EN](https://huggingface.co/datasets/CohereLabs/Global-MMLU-Lite/viewer/en/test) | General knowledge | Multiple-choice QA | Accuracy | 400 | 5 | test |
+| Global PIQA | [ES](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel/viewer/spa_latn_spai), [EN](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel/viewer/eng_latn) | Common sense & inference | Multiple-choice QA | Normalized accuracy | 100 | 0 | test |
+| GPQA Main | [ES](https://huggingface.co/datasets/ellamind/gpqa-multilingual/viewer/spa), [EN](https://huggingface.co/datasets/Idavidrein/gpqa/viewer/gpqa_main) | Specialized reasoning (biology, physics, chemistry) | Multiple-choice QA | Accuracy | 448 | 5 | train |
+| HellaSwag | [ES](https://huggingface.co/datasets/alvarobartt/hellaswag-okapi-eval-es), [EN](https://huggingface.co/datasets/Rowan/hellaswag/viewer/default/validation) | Common sense & inference | Multiple-choice QA | Normalized accuracy | 9,374 (ES), 10,042 (EN) | 10 | val |
+| MGSM | [GN](data/evaluation/mgsm), [ES](https://huggingface.co/datasets/juletxara/mgsm/viewer/es/test), [EN](https://huggingface.co/datasets/juletxara/mgsm/viewer/en/test) | Specialized reasoning (mathematics) | Generation | Exact match | 142 (GN), 250 (ES), 250 (EN) | 5 (GN), 0 (ES), 0 (EN) | test |
+| MultiWikiQA | [GN](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/gn), [ES](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/es), [EN](https://huggingface.co/datasets/alexandrainst/multi-wiki-qa/viewer/en) | Reading comprehension | Generation | Exact match, F1 | 5,003 (GN), 5,001 (ES), 4,999 (EN) | 2 | train |
+| TruthfulQA MC1 | [ES](https://huggingface.co/datasets/HiTZ/truthfulqa-multi/viewer/es/validation), [EN](https://huggingface.co/datasets/HiTZ/truthfulqa-multi/viewer/en/validation) | Truthfulness and factuality | Multiple-choice QA | Accuracy | 789 (ES), 817 (EN) | 6 | val |
+| WNLI | [GN](data/evaluation/wnli), [ES](https://huggingface.co/datasets/PlanTL-GOB-ES/wnli-es/blob/main/wnli-test-shuffled-es.csv), [EN](https://huggingface.co/datasets/nyu-mll/glue/viewer/wnli/test) | Common sense & inference | Multiple-choice QA | Accuracy | 49 (GN), 71 (ES), 71 (EN) | 5 | dev |
+| XStoryCloze | [ES](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/es/eval), [EN](https://huggingface.co/datasets/juletxara/xstory_cloze/viewer/en/eval) | Common sense & inference | Multiple-choice QA | Accuracy | 1,511 | 5 | eval |
 
 > [!Important]
 > Complementing the mentioned benchkmarks, we assess the language modeling capacity of the adapted model through `perplexity` on [COREGUAPA](https://corpus.spl.gov.py), a high-quality proprietary corpus curated by the [Paraguayan Secretariat of Linguistic Policy](https://spl.gov.py).
@@ -170,22 +150,22 @@ than the aggregate average alone.
 **Deep-dive into the Guarani mixed performance**
 
 The mixed results on Guarani may have several causes. The base model may already have
-some ability on particular tasks, leaving less room for CPT to improve them. The C7
+some ability on particular tasks, leaving less room for `CPT` to improve them. The `C7`
 corpus may also lack the task-relevant information needed to improve some capabilities.
-Finally, the amount of CPT data may be small relative to the model’s size, limiting the
+Finally, the amount of `CPT` data may be small relative to the model’s size, limiting the
 gains from continued training. The comparisons below examine these possibilities; they
 are indicative rather than controlled tests of each cause.
 
-To compare the effect of the starting model, we ran full CPT with the same C7 data
-configuration on `Gemma-3 4B` and `Gemma-4 E4B`. The table shows that E4B starts with a
-higher Guarani average (`31.66` vs. `22.37`) and retains the higher average after CPT
-(`37.42` vs. `33.18`). However, the average gain is larger for Gemma 3 (`+10.81` vs.
-`+5.76`). Gemma 3 gains more on `Global MMLU Lite`, `MGSM`, `Belebele`, and
-`MultiWikiQA`, while Gemma 4 gains more on `WNLI`. Translation results also differ by
-direction: Gemma 4 gains more for translation into Guarani, whereas Gemma 3 gains more
-for translation from Guarani. This pattern is consistent with the stronger Gemma 4
+To compare the effect of the starting model, we ran full `CPT` with the same `C7` data
+configuration on `Gemma-3 4B` and `Gemma-4 E4B`. The table shows that `E4B` starts with a
+higher Guarani average (`31.66` vs. `22.37`) and retains the higher average after `CPT`
+(`37.42` vs. `33.18`). However, the average gain is larger for `Gemma 3` (`+10.81` vs.
+`+5.76`). `Gemma 3` gains more on `Global MMLU Lite`, `MGSM`, `Belebele`, and
+`MultiWikiQA`, while `Gemma 4` gains more on `WNLI`. Translation results also differ by
+direction: `Gemma 4` gains more for translation into Guarani, whereas `Gemma 3` gains more
+for translation from Guarani. This pattern is consistent with the stronger `Gemma 4`
 baseline having less headroom on several tasks, but it does not show that baseline
-capacity alone explains the mixed results or that the C7 data is unhelpful.
+capacity alone explains the mixed results or that the `C7` data is unhelpful.
 
 | Benchmark | Gemma-3-Base | Gemma-4-Base | Gemma-3-4B-C7 | Gain Gemma-3-C7 | Gemma-4-E4B-C7 | Gain Gemma-4-C7
 | --- | --- | --- | --- | --- | --- | --- |
@@ -202,8 +182,8 @@ capacity alone explains the mixed results or that the C7 data is unhelpful.
 
 *Note: Gain columns show signed score-point differences from the corresponding base model.*
 
-To examine whether model size relative to the data volume matters, we also ran full CPT
-with C7 on the smaller `Gemma-4 E2B`. The table compares its results with `Gemma-4 E4B`.
+To examine whether model size relative to the data volume matters, we also ran `full CPT`
+with `C7` on the smaller `Gemma-4 E2B`. The table compares its results with `Gemma-4 E4B`.
 
 | Benchmark | Gemma-4-E2B-Base | Adapted Gemma-4-E2B | Gain E2B | Gemma-4-E4B-Base | Adapted Gemma-4-E4B | Gain E4B |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -220,11 +200,11 @@ with C7 on the smaller `Gemma-4 E2B`. The table compares its results with `Gemma
 
 *Note: Gain columns show signed score-point differences from the corresponding base model.*
 
-E2B gains more on average from C7 than E4B (`+8.23` vs. `+5.76` points), and gains more
+`E2B` gains more on average from `C7` than `E4B` (`+8.23` vs. `+5.76` points), and gains more
 on `Global MMLU Lite`, `WNLI`, `MultiWikiQA`, and translation from Guarani. E4B gains
 more on `Belebele` and translation into Guarani. Neither model improves on `MGSM`.
-These results are consistent with the C7 data volume being better matched to E2B’s
-smaller size, although E4B still has the higher post-CPT average (`37.42` vs. `31.26`).
+These results are consistent with the `C7` data volume being better matched to `E2B`’s
+smaller size, although `E4B` still has the higher post-CPT average (`37.42` vs. `31.26`).
 The task-level differences also show that model size does not determine the outcome on
 its own. Overall, the comparison supports data-to-model size as one possible factor in
 the mixed performance, while leaving room for baseline capabilities and task-specific
